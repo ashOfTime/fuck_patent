@@ -1,0 +1,17 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<<html>
+	<head>
+				<link rel="stylesheet" type="text/css" href="/sipopublicsearch/common-ui/css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="/sipopublicsearch/common-ui/css/base.css"/>
+		<script type="text/javascript" src="/sipopublicsearch/common-ui/js/jquery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/sipopublicsearch/wee/platform/common/js/local/package_zh_CN.js"></script>
+		<script type="text/javascript"> var contextPath="/sipopublicsearch";</script>
+
+		<script>
+			window.location.href = contextPath +"/portal/uilogin-forwardLogin.shtml";
+		</script>
+	</head>
+</html>

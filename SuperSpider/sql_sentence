@@ -1,0 +1,50 @@
+
+# coding:utf-8
+"""
+数据库管理，按年份管理数据，每一年是一张表，需要提前创建好相应年份的表。
+"""
+
+import pymysql
+import datetime
+
+
+sql_insert = """
+		INSERT INTO `2017` (page,datetime,total_num,content)
+		VALUES (%s,'%s',%s,'%s')
+"""
+
+sql_insert = """
+		INSERT INTO `2017` (page,datetime,total_num,content)
+		VALUES (?,?,?,?)
+"""
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+sql_select_last = """
+	SELECT * FROM `2017`
+ORDER BY id DESC
+LIMIT 1;
+"""
+
+sql_create = """
+		CREATE TABLE `2017`(
+		ID int primary key auto_increment NOT NULL ,
+		page INT NOT NULL,
+		datetime TEXT NOT NULL,
+		total_num INT NOT NULL,
+		content BLOB NOT NULL
+		)
+"""
+
+
+
+def datelist(start, end):
+    start_date = datetime.date(*start)
+    end_date = datetime.date(*end)
+
+    result = []
+    curr_date = start_date
+    while curr_date != end_date:
+        result.append("%04d-%02d-%02d" % (curr_date.year, curr_date.month, curr_date.day))
+        curr_date += datetime.timedelta(1)
+    result.append("%04d-%02d-%02d" % (curr_date.year, curr_date.month, curr_date.day))
+    return result
+

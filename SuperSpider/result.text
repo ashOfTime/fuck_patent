@@ -1,0 +1,4407 @@
+
+
+
+<script  src="/sipopublicsearch/common-ui/js/jqSelect/js/jquery.jqSelect.js"></script>
+<link rel="stylesheet" href="/sipopublicsearch/common-ui/js/jqSelect/css/jquery.jqSelect.css" type="text/css"></link>
+
+	
+	<!-- 同族、收藏需要引用的css -->
+	<link rel="stylesheet" href="http://www.pss-system.gov.cn:80/sipopublicsearch/common-ui/js/pagnation/jquery.pagination.css">
+	<link rel="stylesheet" href="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/searchliteradb/css/searchliteradbadd.css"/>
+	<link rel="stylesheet" href="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/searchtools/dialog/quote.css"/>
+	<link rel="stylesheet" href="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/cognationsearch/css/query-cognation-search.css"/>
+	<!-- 同族、收藏需要引用的js -->
+	<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/common-ui/js/pagnation/jquery.pagination-1.2.7.js"></script>
+	<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/cognationsearch/js/query-cognation-search.js"></script>
+	<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/searchtools/dialog/quote.js"></script>
+	<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/searchliteradb/js/searchliteradbadd.js"></script>
+	<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/viewtools/js/cognation_downloadLitera.js"></script>
+	<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/searchtools/js/examine.js"></script>
+	<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/searchtools/dialog/law_state.js"></script>
+	<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/analysis-ui/app/project/js/build-project.js"></script>
+	<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/viewtools/js/translate.js"></script>
+	<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/result/js/result_list.js"></script>
+	<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/common/js/onCheckOnPage.js?version=v1"></script>
+	<style>
+    	body .main-body1{
+    		width: 100%;
+    	}
+    	.test-class{
+    		width:1190px;
+    		margin:0 auto;
+    		margin-bottom:20px;
+    	}
+    </style>
+    <div id="search_result">
+	<!-- 检索结果统计 -->
+	
+
+
+<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/result/js/result_statics.js"></script>
+<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/result/js/result_statics_list.js"></script>
+ <div id="panel_statics" status="on">
+	<div class="re-le" id="itemsbox">
+    <div class="le" id="itemsList" style="width: 220px;">
+        <div class="boxHead">
+            <h2>检索结果统计</h2>
+        </div>
+        <div class="le-list">
+            <div class="title-type">
+                <h3><a href="javascript:;" name="link_statics" sort="PASTAT"> <span class="in-bl"></span>申请人统计</a></h3>
+                <ul sort="PASTAT"></ul>
+            </div>
+            <div class="title-type">
+                <h3><a href="javascript:;" name="link_statics" sort="INSTAT"> <span class="in-bl"></span>发明人统计</a></h3>
+                <ul sort="INSTAT"></ul>
+            </div>
+            <div class="title-type">
+                <h3><a href="javascript:;" name="link_statics" sort="ICST"> <span class="in-bl"></span>技术领域统计</a></h3>
+                <ul sort="ICST"></ul>
+            </div><div class="title-type">
+                <h3><a href="javascript:;" name="link_statics" sort="ADY"> <span class="in-bl"></span>申请日统计</a></h3>
+                <ul sort="ADY"></ul>
+            </div>
+            <div class="title-type">
+                <h3><a href="javascript:;" name="link_statics" sort="PDY"> <span class="in-bl"></span>公开日统计</a></h3>
+                <ul sort="PDY"></ul>
+            </div>
+        </div>
+    </div>
+	</div>
+</div>
+	<div id="search_result_former" class="re-ri">
+	<!-- result_menus.jsp start -->
+	
+
+
+<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/result/js/result_menus.js"></script>
+<div class="ri-top clear" style="margin-bottom: 20px;" id='view_mode_selector'>
+    <div id="result_view_mode" class="btn-group">
+        <a href="javascript:void(0)" mode="SEARCH_MODE" class="select btn result-style-btn search-style-btn">搜索式</a>
+        <a href="javascript:void(0)" mode="TABLE_MODE" class="btn result-style-btn list-style-btn">列表式</a>
+        <a href="javascript:void(0)" mode="IMAGE_MODE" class="btn result-style-btn picture-style-btn">多图式</a>
+    </div>
+    <div class="select-group">
+		<div id="tool_sort" class="select in-bl" style="vertical-align:top; display:none;" data-height="30" data-width="120" data-border="false" data-handler="sort_tool_callback">
+			<div value="-APD" >申请日降序</div>
+			<div value="+APD" >申请日升序</div>
+			<div value="-PD" >公开日降序</div>
+			<div value="+PD" >公开日升序</div>
+		</div>
+    	<div id="tool_sort_fake" class="in-bl" style="height: 30px;width:120px;  margin: 0 6px;font-size: 1.6em;border: 1px solid rgb(213,219,231);vertical-align:top;line-height:30px;">
+    		<div style="padding-left:10px;">
+    			申请日降序
+    		</div>
+    	</div>
+        <a href="javascript:;" id="tool_filter" class="btn filter_btn">过滤</a>
+    </div>
+    <div class="page-group">
+        <div style='overflow:hidden;float:none;position:static;'><div class="uipage"><link href="http://www.pss-system.gov.cn:80/sipopublicsearch/common-ui/css/uiPage/uiPage.css" rel="stylesheet" type="text/css" /> <div class="page_top"> <a href="#"><img src="/sipopublicsearch/wee/platform/common/images/page/page_5.gif" /></a> <a href="#"><img src="/sipopublicsearch/wee/platform/common/images/page/page_6.gif" /></a> <a href="javascript:gotoPage('resultlistForm_top',12,true,'search_result')"><img src="/sipopublicsearch/wee/platform/common/images/page/page_3.gif" /></a> <a href="javascript:gotoPage('resultlistForm_top',24552,true,'search_result')"><img src="/sipopublicsearch/wee/platform/common/images/page/page_4.gif" /></a>第&nbsp;<input type="text" style="height:25px;line-height:25px; text-align:center; width:40px;border:#c8c8c8 1px solid;padding:0;" value = '1'  onkeydown = "if(event.keyCode == 13){gotoPageNum('resultlistForm_top',this.value,'12','2047','1',true,'search_result')}" />&nbsp;页&nbsp;共&nbsp;2047&nbsp;页&nbsp;24561&nbsp;条数据 </div> </div></div><form name='resultlistForm_top' id='resultlistForm_top'  action='/sipopublicsearch/patentsearch/showSearchResult-startWa.shtml'  method='post'><input type="hidden" name="resultPagination.limit" value="12" id="resultPagination.limit"/><input type="hidden" name="resultPagination.sumLimit" value="10" id="resultPagination.sumLimit"/><input type="hidden" name="resultPagination.start" value="0" id="start"/><input type="hidden" name="resultPagination.totalCount" value="24561" id="resultPagination.totalCount"/><input type="hidden" name="searchCondition.searchType" value="Sino_foreign"/><input type="hidden" name="searchCondition.dbId" value=""/><input type="hidden" name="searchCondition.extendInfo['STRATEGY']" value="STRATEGY_CALCULATE"/><input type="hidden" name="searchCondition.strategy" value=""/><input type="hidden" name="searchCondition.literatureSF" value="公开（公告）日=2015-01-01"/><input type="hidden" name="searchCondition.targetLanguage" value=""/><input type="hidden" name="searchCondition.originalLanguage" value=""/><input type="hidden" name="searchCondition.extendInfo['MODE']" value="MODE_TABLE"/><input type="hidden" name="searchCondition.searchKeywords" value="[2][ ]{0,}[0][ ]{0,}[1][ ]{0,}[5][ ]{0,}[.][ ]{0,}[0][ ]{0,}[1][ ]{0,}[.][ ]{0,}[0][ ]{0,}[1][ ]{0,}"/><input type="hidden" name="searchCondition.searchExp" value="公开（公告）日=2015-01-01"/><input type="hidden" name="resultPagination.sumLimit" value="10"/><input type="hidden" name="searchCondition.executableSearchExp" value="VDB:(PD='2015-02-05')"/><input type="hidden" name="wee.bizlog.modulelevel" value="0200201"/></form>
+    </div>
+</div>
+	
+	
+
+	<!-- 浮动助手start -->
+	
+
+
+<script src="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/result/js/result_assist_common.js" ></script>
+<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/result/js/result_assist.js"></script>
+
+<!--新右侧菜单 -->
+    <div class="fixed-menu1" id="fixed-menu1">
+        <ul>
+            <li>
+                <a id="assist_selectpage" href="javascript:;" class="btn-hover btn-select-all">
+                    <strong>全选本页</strong>
+                </a>
+            </li>
+            <li>
+                <a id="assist_detail" href="javascript:;" class="btn-hover btn-full-text">
+                    <strong>详 览</strong>
+                </a>
+            </li>
+            
+            	<li>
+               		<a id="assist_favorite" href="javascript:;" class="btn-hover btn-collection">
+                    	<strong>收 藏</strong>
+                	</a>
+            	</li>
+            
+            
+            
+            	<li>
+                	<a id="assist_anylasisdb" href="javascript:;" class="btn-hover btn-analyze">
+                    	<strong>加入分析库</strong>
+                	</a>
+            	</li>
+            
+            <li>
+                <a id="assist_detail_all" href="javascript:;" class="btn-hover btn-full-text-all">
+                    <strong>详览全部</strong>
+                </a>
+            </li>
+            
+            
+            	<li>
+                	<a id="assist_anylasisdb_all" href="javascript:;" class="btn-hover btn-analyze-all">
+                    	<strong>全部加入分析库</strong>
+                	</a>
+            	</li>
+            
+        </ul>
+    </div>
+
+    <div class="to-top-area">
+        <a href="javascript:;" class="btn-hover btn-to-top">
+            <strong>返回顶部</strong>
+        </a>
+    </div>
+    <!--/新右侧菜单 -->
+	<!-- 浮动助手end -->
+
+	<!-- 判断显示方式：搜索式 -->
+	
+		
+
+
+
+<!DOCTYPE HTML>
+<link rel="stylesheet" href="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/result/css/search-mode.css" />
+<link rel="stylesheet" href="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/app/view/css/translate.css" />
+<div class="re-content search-mode-content" style="margin-top:0;">
+    <div class="list-container">
+        <ul>
+        
+            
+            	
+            		<li class="patent">
+            	
+            	
+            	
+            
+            
+                <div class="item">
+            <!-- 文献标识 -->
+			<input type="hidden" name="vIdHidden" value='NO20150165A1' />
+			<!-- 文献唯一标识 -->
+			<input type="hidden" name="idHidden" value='NO20150165A1'>
+			<!-- 发明名称 -->
+			<input type="hidden" name="titleHidden" value=''>
+			<!-- nrdAN -->
+			<input type="hidden" name="nrdAnHidden" value='NO20150165'>
+			<!-- nrdAPD -->
+			<input type="hidden" name="nrdAdpHidden" value='2015.02.05'>
+			<!-- nrdPD -->
+			<input type="hidden" name="nrdpdHidden" value='2015.02.05'>
+			<!-- nrdPN -->
+			<input type="hidden" name="nrdPnHidden" value='NO20150165A1'>
+			<!-- ansn -->
+			<input type="hidden" name="appSnHidden" value='NO201500000016500.0000'>
+			<!-- pnsn -->
+			<input type="hidden" name="pnSnHidden" value='NO20159999999900000000000001650A1.0000'>
+			<input type="hidden" name="langHidden" value='OTHER'>
+			<input type="hidden" name="docStatusHidden" value=''>
+			<!-- 申请人/专利权人 -->
+			<input type="hidden" name="appNameHidden" value='BAKER HUGHES INC;'>
+			<!-- 地址 -->
+			<input type="hidden" name="appAddrHidden" value=''>
+			<!-- 邮编 -->
+			<input type="hidden" name="appZipHidden" value=''>
+			<!-- 申请人/专利权人所在国代码 -->
+			<input type="hidden" name="appCountryHidden" value='美国;'>
+                    <div class="item-header clear">
+                        <h1 class="left" style="max-width: 580px;">
+                        	<div style="float: left;"><input type="checkbox" name="patent_flag" /></div>
+                        	
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+                        			<span style="color:#A9A9A9;">该文献无标题</span>
+                        			
+								
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        </h1>
+                        <div class="btn-group left clear" style="float:left">
+                        	
+                        	
+                        	
+                        		
+                        			<a href="javascript:cognationSearchDialog('NO20150165A1')" class="btn btn-tag">
+                            			同族：7
+									</a>
+                        		
+                        		
+                        	
+                            
+                            
+                            <input type="hidden" class="ttttt" value="NO20150165A1" />
+                            	
+								
+									<a class="btn btn-tag-unable">
+                            			引证：0
+                            		</a>
+								
+							
+							
+								
+								
+									<a class="btn btn-tag-unable">
+                            			被引：0
+                            		</a>
+								
+							
+                        </div>
+                    </div>
+                    <div class="item-content clear">
+                        <div class="item-content-body left">
+                            
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>申请号 : </b>NO:20150165:A</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>申请日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB007','申请日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>公开（公告）号 : </b>NO20150165A1</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>公开（公告）日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB012','公开（公告）日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">IPC分类号 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="E21B47/00" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				E21B47/00
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="E21B47/06" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				E21B47/06
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="E21B21/08" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				E21B21/08
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">申请（专利权）人 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="BAKER HUGHES INC" onclick="drillSearch('IVDB020','申请（专利权）人','','false',this);return false;">
+											        				BAKER HUGHES INC
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">发明人 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="MOOS DANIEL" onclick="drillSearch('IVDB021','发明人','','false',this);return false;">
+											        				MOOS DANIEL
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="DANKERS STEPHAN" onclick="drillSearch('IVDB021','发明人','','false',this);return false;">
+											        				DANKERS STEPHAN
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权号 : </b>US201213618011; US2013059657</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权日 : </b>2012.09.14; 2013.09.13</p>
+										    	
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+							
+                        </div>
+                        
+                    </div>
+                    <div class="item-footer">
+                        <div class="btn-group clear">
+                            <a href="javascript:;" class="btn btn-operation" role="detail">详览</a>
+                            <a href="javascript:;" class="btn btn-operation" role="lawState" an="NO20150165" pn="NO20150165A1">法律状态</a>
+                            <a href="javascript:;" class="btn btn-operation" role="proposor" _name="BAKER HUGHES INC;" _address="" _zipCode="" _country="美国;">申请人</a>
+                            
+                            
+								<a href="javascript:;" role="addAnalysis" class="btn btn-operation">+ 分析库</a>
+							
+                            
+								<a href="javascript:;" role="favorite" class="btn btn-operation">收藏</a>
+							
+							
+                            	<a href="javascript:;" role="translate" _id="NO20150165A1" class="btn btn-operation btn-translate">翻译</a>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            
+            	
+            	
+            	
+            		<li class="patent normalApp">
+            	
+            
+            
+                <div class="item">
+            <!-- 文献标识 -->
+			<input type="hidden" name="vIdHidden" value='NO20150163A1' />
+			<!-- 文献唯一标识 -->
+			<input type="hidden" name="idHidden" value='NO20150163A1'>
+			<!-- 发明名称 -->
+			<input type="hidden" name="titleHidden" value=''>
+			<!-- nrdAN -->
+			<input type="hidden" name="nrdAnHidden" value='NO20150163'>
+			<!-- nrdAPD -->
+			<input type="hidden" name="nrdAdpHidden" value='2015.02.05'>
+			<!-- nrdPD -->
+			<input type="hidden" name="nrdpdHidden" value='2015.02.05'>
+			<!-- nrdPN -->
+			<input type="hidden" name="nrdPnHidden" value='NO20150163A1'>
+			<!-- ansn -->
+			<input type="hidden" name="appSnHidden" value='NO201500000016300.0000'>
+			<!-- pnsn -->
+			<input type="hidden" name="pnSnHidden" value='NO20159999999900000000000001630A1.0000'>
+			<input type="hidden" name="langHidden" value='OTHER'>
+			<input type="hidden" name="docStatusHidden" value=''>
+			<!-- 申请人/专利权人 -->
+			<input type="hidden" name="appNameHidden" value='BAKER HUGHES INC;'>
+			<!-- 地址 -->
+			<input type="hidden" name="appAddrHidden" value=''>
+			<!-- 邮编 -->
+			<input type="hidden" name="appZipHidden" value=''>
+			<!-- 申请人/专利权人所在国代码 -->
+			<input type="hidden" name="appCountryHidden" value='美国;'>
+                    <div class="item-header clear">
+                        <h1 class="left" style="max-width: 580px;">
+                        	<div style="float: left;"><input type="checkbox" name="patent_flag" /></div>
+                        	
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+                        			<span style="color:#A9A9A9;">该文献无标题</span>
+                        			
+								
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        </h1>
+                        <div class="btn-group left clear" style="float:left">
+                        	
+                        	
+                        	
+                        		
+                        			<a href="javascript:cognationSearchDialog('NO20150163A1')" class="btn btn-tag">
+                            			同族：8
+									</a>
+                        		
+                        		
+                        	
+                            
+                            
+                            <input type="hidden" class="ttttt" value="NO20150163A1" />
+                            	
+								
+									<a class="btn btn-tag-unable">
+                            			引证：0
+                            		</a>
+								
+							
+							
+								
+								
+									<a class="btn btn-tag-unable">
+                            			被引：0
+                            		</a>
+								
+							
+                        </div>
+                    </div>
+                    <div class="item-content clear">
+                        <div class="item-content-body left">
+                            
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>申请号 : </b>NO:20150163:A</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>申请日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB007','申请日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>公开（公告）号 : </b>NO20150163A1</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>公开（公告）日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB012','公开（公告）日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">IPC分类号 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="E21B4/02" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				E21B4/02
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="F04C13/00" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				F04C13/00
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="E21B4/04" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				E21B4/04
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="F04C2/10" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				F04C2/10
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="F04C15/00" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				F04C15/00
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">申请（专利权）人 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="BAKER HUGHES INC" onclick="drillSearch('IVDB020','申请（专利权）人','','false',this);return false;">
+											        				BAKER HUGHES INC
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">发明人 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="HOHL CARSTEN" onclick="drillSearch('IVDB021','发明人','','false',this);return false;">
+											        				HOHL CARSTEN
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="BENNING HELMUT G" onclick="drillSearch('IVDB021','发明人','','false',this);return false;">
+											        				BENNING HELMUT G
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权号 : </b>US201213605476; US2013057563</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权日 : </b>2012.09.06; 2013.08.30</p>
+										    	
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+							
+                        </div>
+                        
+                    </div>
+                    <div class="item-footer">
+                        <div class="btn-group clear">
+                            <a href="javascript:;" class="btn btn-operation" role="detail">详览</a>
+                            <a href="javascript:;" class="btn btn-operation" role="lawState" an="NO20150163" pn="NO20150163A1">法律状态</a>
+                            <a href="javascript:;" class="btn btn-operation" role="proposor" _name="BAKER HUGHES INC;" _address="" _zipCode="" _country="美国;">申请人</a>
+                            
+                            
+								<a href="javascript:;" role="addAnalysis" class="btn btn-operation">+ 分析库</a>
+							
+                            
+								<a href="javascript:;" role="favorite" class="btn btn-operation">收藏</a>
+							
+							
+                            	<a href="javascript:;" role="translate" _id="NO20150163A1" class="btn btn-operation btn-translate">翻译</a>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            
+            
+            	
+            	
+            	
+            		<li class="patent sameApp">
+            	
+            
+                <div class="item">
+            <!-- 文献标识 -->
+			<input type="hidden" name="vIdHidden" value='NO20150163A' />
+			<!-- 文献唯一标识 -->
+			<input type="hidden" name="idHidden" value='NO20150163A'>
+			<!-- 发明名称 -->
+			<input type="hidden" name="titleHidden" value=''>
+			<!-- nrdAN -->
+			<input type="hidden" name="nrdAnHidden" value='NO20150163'>
+			<!-- nrdAPD -->
+			<input type="hidden" name="nrdAdpHidden" value='2015.02.05'>
+			<!-- nrdPD -->
+			<input type="hidden" name="nrdpdHidden" value='2015.02.05'>
+			<!-- nrdPN -->
+			<input type="hidden" name="nrdPnHidden" value='NO20150163A'>
+			<!-- ansn -->
+			<input type="hidden" name="appSnHidden" value='NO201500000016300.0000'>
+			<!-- pnsn -->
+			<input type="hidden" name="pnSnHidden" value='NO201599999999000000000000016300A.0000'>
+			<input type="hidden" name="langHidden" value='OTHER'>
+			<input type="hidden" name="docStatusHidden" value=''>
+			<!-- 申请人/专利权人 -->
+			<input type="hidden" name="appNameHidden" value=''>
+			<!-- 地址 -->
+			<input type="hidden" name="appAddrHidden" value=''>
+			<!-- 邮编 -->
+			<input type="hidden" name="appZipHidden" value=''>
+			<!-- 申请人/专利权人所在国代码 -->
+			<input type="hidden" name="appCountryHidden" value=''>
+                    <div class="item-header clear">
+                        <h1 class="left" style="max-width: 580px;">
+                        	<div style="float: left;"><input type="checkbox" name="patent_flag" /></div>
+                        	
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+                        			<span style="color:#A9A9A9;">该文献无标题</span>
+                        			
+								
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        </h1>
+                        <div class="btn-group left clear" style="float:left">
+                        	
+                        	
+                        	
+                        		
+                        			<a href="javascript:cognationSearchDialog('NO20150163A')" class="btn btn-tag">
+                            			同族：8
+									</a>
+                        		
+                        		
+                        	
+                            
+                            
+                            <input type="hidden" class="ttttt" value="NO20150163A" />
+                            	
+								
+									<a class="btn btn-tag-unable">
+                            			引证：0
+                            		</a>
+								
+							
+							
+								
+								
+									<a class="btn btn-tag-unable">
+                            			被引：0
+                            		</a>
+								
+							
+                        </div>
+                    </div>
+                    <div class="item-content clear">
+                        <div class="item-content-body left">
+                            
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>申请号 : </b>NO:20150163:A</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>申请日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB007','申请日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>公开（公告）号 : </b>NO20150163A</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>公开（公告）日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB012','公开（公告）日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+							
+                        </div>
+                        
+                    </div>
+                    <div class="item-footer">
+                        <div class="btn-group clear">
+                            <a href="javascript:;" class="btn btn-operation" role="detail">详览</a>
+                            <a href="javascript:;" class="btn btn-operation" role="lawState" an="NO20150163" pn="NO20150163A">法律状态</a>
+                            <a href="javascript:;" class="btn btn-operation" role="proposor" _name="" _address="" _zipCode="" _country="">申请人</a>
+                            
+                            
+								<a href="javascript:;" role="addAnalysis" class="btn btn-operation">+ 分析库</a>
+							
+                            
+								<a href="javascript:;" role="favorite" class="btn btn-operation">收藏</a>
+							
+							
+                            	<a href="javascript:;" role="translate" _id="NO20150163A" class="btn btn-operation btn-translate">翻译</a>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            
+            	
+            	
+            	
+            		<li class="patent normalApp">
+            	
+            
+            
+                <div class="item">
+            <!-- 文献标识 -->
+			<input type="hidden" name="vIdHidden" value='NO20150165A' />
+			<!-- 文献唯一标识 -->
+			<input type="hidden" name="idHidden" value='NO20150165A'>
+			<!-- 发明名称 -->
+			<input type="hidden" name="titleHidden" value=''>
+			<!-- nrdAN -->
+			<input type="hidden" name="nrdAnHidden" value='NO20150165'>
+			<!-- nrdAPD -->
+			<input type="hidden" name="nrdAdpHidden" value='2015.02.05'>
+			<!-- nrdPD -->
+			<input type="hidden" name="nrdpdHidden" value='2015.02.05'>
+			<!-- nrdPN -->
+			<input type="hidden" name="nrdPnHidden" value='NO20150165A'>
+			<!-- ansn -->
+			<input type="hidden" name="appSnHidden" value='NO201500000016500.0000'>
+			<!-- pnsn -->
+			<input type="hidden" name="pnSnHidden" value='NO201599999999000000000000016500A.0000'>
+			<input type="hidden" name="langHidden" value='OTHER'>
+			<input type="hidden" name="docStatusHidden" value=''>
+			<!-- 申请人/专利权人 -->
+			<input type="hidden" name="appNameHidden" value=''>
+			<!-- 地址 -->
+			<input type="hidden" name="appAddrHidden" value=''>
+			<!-- 邮编 -->
+			<input type="hidden" name="appZipHidden" value=''>
+			<!-- 申请人/专利权人所在国代码 -->
+			<input type="hidden" name="appCountryHidden" value=''>
+                    <div class="item-header clear">
+                        <h1 class="left" style="max-width: 580px;">
+                        	<div style="float: left;"><input type="checkbox" name="patent_flag" /></div>
+                        	
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+                        			<span style="color:#A9A9A9;">该文献无标题</span>
+                        			
+								
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        </h1>
+                        <div class="btn-group left clear" style="float:left">
+                        	
+                        	
+                        	
+                        		
+                        			<a href="javascript:cognationSearchDialog('NO20150165A')" class="btn btn-tag">
+                            			同族：7
+									</a>
+                        		
+                        		
+                        	
+                            
+                            
+                            <input type="hidden" class="ttttt" value="NO20150165A" />
+                            	
+								
+									<a class="btn btn-tag-unable">
+                            			引证：0
+                            		</a>
+								
+							
+							
+								
+								
+									<a class="btn btn-tag-unable">
+                            			被引：0
+                            		</a>
+								
+							
+                        </div>
+                    </div>
+                    <div class="item-content clear">
+                        <div class="item-content-body left">
+                            
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>申请号 : </b>NO:20150165:A</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>申请日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB007','申请日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>公开（公告）号 : </b>NO20150165A</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>公开（公告）日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB012','公开（公告）日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+							
+                        </div>
+                        
+                    </div>
+                    <div class="item-footer">
+                        <div class="btn-group clear">
+                            <a href="javascript:;" class="btn btn-operation" role="detail">详览</a>
+                            <a href="javascript:;" class="btn btn-operation" role="lawState" an="NO20150165" pn="NO20150165A">法律状态</a>
+                            <a href="javascript:;" class="btn btn-operation" role="proposor" _name="" _address="" _zipCode="" _country="">申请人</a>
+                            
+                            
+								<a href="javascript:;" role="addAnalysis" class="btn btn-operation">+ 分析库</a>
+							
+                            
+								<a href="javascript:;" role="favorite" class="btn btn-operation">收藏</a>
+							
+							
+                            	<a href="javascript:;" role="translate" _id="NO20150165A" class="btn btn-operation btn-translate">翻译</a>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            
+            	
+            	
+            	
+            		<li class="patent normalApp">
+            	
+            
+            
+                <div class="item">
+            <!-- 文献标识 -->
+			<input type="hidden" name="vIdHidden" value='DE202015100354U1' />
+			<!-- 文献唯一标识 -->
+			<input type="hidden" name="idHidden" value='DE202015100354U1'>
+			<!-- 发明名称 -->
+			<input type="hidden" name="titleHidden" value=''>
+			<!-- nrdAN -->
+			<input type="hidden" name="nrdAnHidden" value='DE202015100354'>
+			<!-- nrdAPD -->
+			<input type="hidden" name="nrdAdpHidden" value='2015.01.27'>
+			<!-- nrdPD -->
+			<input type="hidden" name="nrdpdHidden" value='2015.02.05'>
+			<!-- nrdPN -->
+			<input type="hidden" name="nrdPnHidden" value='DE202015100354U1'>
+			<!-- ansn -->
+			<input type="hidden" name="appSnHidden" value='DE201500010035400.0002'>
+			<!-- pnsn -->
+			<input type="hidden" name="pnSnHidden" value='DE20159999999900000000001003540U1.0020'>
+			<input type="hidden" name="langHidden" value='OTHER'>
+			<input type="hidden" name="docStatusHidden" value=''>
+			<!-- 申请人/专利权人 -->
+			<input type="hidden" name="appNameHidden" value='DEGELSEGGER WALTER;'>
+			<!-- 地址 -->
+			<input type="hidden" name="appAddrHidden" value=''>
+			<!-- 邮编 -->
+			<input type="hidden" name="appZipHidden" value=''>
+			<!-- 申请人/专利权人所在国代码 -->
+			<input type="hidden" name="appCountryHidden" value='奥地利;'>
+                    <div class="item-header clear">
+                        <h1 class="left" style="max-width: 580px;">
+                        	<div style="float: left;"><input type="checkbox" name="patent_flag" /></div>
+                        	
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+                        			<span style="color:#A9A9A9;">该文献无标题</span>
+                        			
+								
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        </h1>
+                        <div class="btn-group left clear" style="float:left">
+                        	
+                        	
+                        	
+                        		
+                        			<a href="javascript:cognationSearchDialog('DE202015100354U1')" class="btn btn-tag">
+                            			同族：2
+									</a>
+                        		
+                        		
+                        	
+                            
+                            
+                            <input type="hidden" class="ttttt" value="DE202015100354U1" />
+                            	
+                           			<a href="javascript:showQuoteDialog('DE202015100354','DE202015100354U1')" class="btn btn-tag">
+                           				引证：3
+                           			</a>
+								
+								
+							
+							
+								
+								
+									<a class="btn btn-tag-unable">
+                            			被引：0
+                            		</a>
+								
+							
+                        </div>
+                    </div>
+                    <div class="item-content clear">
+                        <div class="item-content-body left">
+                            
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>申请号 : </b>DE:202015100354:U</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>申请日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB007','申请日','2015.01.27','false');return false;">2015.01.27</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>公开（公告）号 : </b>DE202015100354U1</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>公开（公告）日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB012','公开（公告）日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">IPC分类号 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="E05F3/16" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				E05F3/16
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">申请（专利权）人 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="DEGELSEGGER WALTER" onclick="drillSearch('IVDB020','申请（专利权）人','','false',this);return false;">
+											        				DEGELSEGGER WALTER
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权号 : </b>AT602014; AT7682014</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权日 : </b>2014.01.29; 2014.10.16</p>
+										    	
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+							
+                        </div>
+                        
+                    </div>
+                    <div class="item-footer">
+                        <div class="btn-group clear">
+                            <a href="javascript:;" class="btn btn-operation" role="detail">详览</a>
+                            <a href="javascript:;" class="btn btn-operation" role="lawState" an="DE202015100354" pn="DE202015100354U1">法律状态</a>
+                            <a href="javascript:;" class="btn btn-operation" role="proposor" _name="DEGELSEGGER WALTER;" _address="" _zipCode="" _country="奥地利;">申请人</a>
+                            
+                            
+								<a href="javascript:;" role="addAnalysis" class="btn btn-operation">+ 分析库</a>
+							
+                            
+								<a href="javascript:;" role="favorite" class="btn btn-operation">收藏</a>
+							
+							
+                            	<a href="javascript:;" role="translate" _id="DE202015100354U1" class="btn btn-operation btn-translate">翻译</a>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            
+            	
+            	
+            	
+            		<li class="patent normalApp">
+            	
+            
+            
+                <div class="item">
+            <!-- 文献标识 -->
+			<input type="hidden" name="vIdHidden" value='DE202015100357U1' />
+			<!-- 文献唯一标识 -->
+			<input type="hidden" name="idHidden" value='DE202015100357U1'>
+			<!-- 发明名称 -->
+			<input type="hidden" name="titleHidden" value=''>
+			<!-- nrdAN -->
+			<input type="hidden" name="nrdAnHidden" value='DE202015100357'>
+			<!-- nrdAPD -->
+			<input type="hidden" name="nrdAdpHidden" value='2015.01.27'>
+			<!-- nrdPD -->
+			<input type="hidden" name="nrdpdHidden" value='2015.02.05'>
+			<!-- nrdPN -->
+			<input type="hidden" name="nrdPnHidden" value='DE202015100357U1'>
+			<!-- ansn -->
+			<input type="hidden" name="appSnHidden" value='DE201500010035700.0002'>
+			<!-- pnsn -->
+			<input type="hidden" name="pnSnHidden" value='DE20159999999900000000001003570U1.0020'>
+			<input type="hidden" name="langHidden" value='OTHER'>
+			<input type="hidden" name="docStatusHidden" value=''>
+			<!-- 申请人/专利权人 -->
+			<input type="hidden" name="appNameHidden" value='BITRON IND ESPAÑA S A;'>
+			<!-- 地址 -->
+			<input type="hidden" name="appAddrHidden" value=''>
+			<!-- 邮编 -->
+			<input type="hidden" name="appZipHidden" value=''>
+			<!-- 申请人/专利权人所在国代码 -->
+			<input type="hidden" name="appCountryHidden" value='西班牙;'>
+                    <div class="item-header clear">
+                        <h1 class="left" style="max-width: 580px;">
+                        	<div style="float: left;"><input type="checkbox" name="patent_flag" /></div>
+                        	
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+                        			<span style="color:#A9A9A9;">该文献无标题</span>
+                        			
+								
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        </h1>
+                        <div class="btn-group left clear" style="float:left">
+                        	
+                        	
+                        	
+                        		
+                        			<a href="javascript:cognationSearchDialog('DE202015100357U1')" class="btn btn-tag">
+                            			同族：3
+									</a>
+                        		
+                        		
+                        	
+                            
+                            
+                            <input type="hidden" class="ttttt" value="DE202015100357U1" />
+                            	
+								
+									<a class="btn btn-tag-unable">
+                            			引证：0
+                            		</a>
+								
+							
+							
+								
+								
+									<a class="btn btn-tag-unable">
+                            			被引：0
+                            		</a>
+								
+							
+                        </div>
+                    </div>
+                    <div class="item-content clear">
+                        <div class="item-content-body left">
+                            
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>申请号 : </b>DE:202015100357:U</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>申请日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB007','申请日','2015.01.27','false');return false;">2015.01.27</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>公开（公告）号 : </b>DE202015100357U1</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>公开（公告）日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB012','公开（公告）日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">IPC分类号 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="F16K31/06" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				F16K31/06
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">申请（专利权）人 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="BITRON IND ESPAÑA S A" onclick="drillSearch('IVDB020','申请（专利权）人','','false',this);return false;">
+											        				BITRON IND ESPAÑA S A
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权号 : </b>ES201430108</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权日 : </b>2014.01.28</p>
+										    	
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+							
+                        </div>
+                        
+                    </div>
+                    <div class="item-footer">
+                        <div class="btn-group clear">
+                            <a href="javascript:;" class="btn btn-operation" role="detail">详览</a>
+                            <a href="javascript:;" class="btn btn-operation" role="lawState" an="DE202015100357" pn="DE202015100357U1">法律状态</a>
+                            <a href="javascript:;" class="btn btn-operation" role="proposor" _name="BITRON IND ESPAÑA S A;" _address="" _zipCode="" _country="西班牙;">申请人</a>
+                            
+                            
+								<a href="javascript:;" role="addAnalysis" class="btn btn-operation">+ 分析库</a>
+							
+                            
+								<a href="javascript:;" role="favorite" class="btn btn-operation">收藏</a>
+							
+							
+                            	<a href="javascript:;" role="translate" _id="DE202015100357U1" class="btn btn-operation btn-translate">翻译</a>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            
+            	
+            	
+            	
+            		<li class="patent normalApp">
+            	
+            
+            
+                <div class="item">
+            <!-- 文献标识 -->
+			<input type="hidden" name="vIdHidden" value='DE202015100356U1' />
+			<!-- 文献唯一标识 -->
+			<input type="hidden" name="idHidden" value='DE202015100356U1'>
+			<!-- 发明名称 -->
+			<input type="hidden" name="titleHidden" value=''>
+			<!-- nrdAN -->
+			<input type="hidden" name="nrdAnHidden" value='DE202015100356'>
+			<!-- nrdAPD -->
+			<input type="hidden" name="nrdAdpHidden" value='2015.01.27'>
+			<!-- nrdPD -->
+			<input type="hidden" name="nrdpdHidden" value='2015.02.05'>
+			<!-- nrdPN -->
+			<input type="hidden" name="nrdPnHidden" value='DE202015100356U1'>
+			<!-- ansn -->
+			<input type="hidden" name="appSnHidden" value='DE201500010035600.0002'>
+			<!-- pnsn -->
+			<input type="hidden" name="pnSnHidden" value='DE20159999999900000000001003560U1.0020'>
+			<input type="hidden" name="langHidden" value='OTHER'>
+			<input type="hidden" name="docStatusHidden" value=''>
+			<!-- 申请人/专利权人 -->
+			<input type="hidden" name="appNameHidden" value='SCHNEIDER ANTON GMBH & CO KG;'>
+			<!-- 地址 -->
+			<input type="hidden" name="appAddrHidden" value=''>
+			<!-- 邮编 -->
+			<input type="hidden" name="appZipHidden" value=''>
+			<!-- 申请人/专利权人所在国代码 -->
+			<input type="hidden" name="appCountryHidden" value='德国;'>
+                    <div class="item-header clear">
+                        <h1 class="left" style="max-width: 580px;">
+                        	<div style="float: left;"><input type="checkbox" name="patent_flag" /></div>
+                        	
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+                        			<span style="color:#A9A9A9;">该文献无标题</span>
+                        			
+								
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        </h1>
+                        <div class="btn-group left clear" style="float:left">
+                        	
+                        	
+                        	
+                        		
+                        			<a href="javascript:cognationSearchDialog('DE202015100356U1')" class="btn btn-tag">
+                            			同族：5
+									</a>
+                        		
+                        		
+                        	
+                            
+                            
+                            <input type="hidden" class="ttttt" value="DE202015100356U1" />
+                            	
+                           			<a href="javascript:showQuoteDialog('DE202015100356','DE202015100356U1')" class="btn btn-tag">
+                           				引证：1
+                           			</a>
+								
+								
+							
+							
+								
+								
+									<a class="btn btn-tag-unable">
+                            			被引：0
+                            		</a>
+								
+							
+                        </div>
+                    </div>
+                    <div class="item-content clear">
+                        <div class="item-content-body left">
+                            
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>申请号 : </b>DE:202015100356:U</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>申请日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB007','申请日','2015.01.27','false');return false;">2015.01.27</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>公开（公告）号 : </b>DE202015100356U1</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>公开（公告）日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB012','公开（公告）日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">IPC分类号 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="A47B88/04" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				A47B88/04
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">申请（专利权）人 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="SCHNEIDER ANTON GMBH & CO KG" onclick="drillSearch('IVDB020','申请（专利权）人','','false',this);return false;">
+											        				SCHNEIDER ANTON GMBH & CO KG
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权号 : </b>DE202015100356</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权日 : </b>2015.01.27</p>
+										    	
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+							
+                        </div>
+                        
+                    </div>
+                    <div class="item-footer">
+                        <div class="btn-group clear">
+                            <a href="javascript:;" class="btn btn-operation" role="detail">详览</a>
+                            <a href="javascript:;" class="btn btn-operation" role="lawState" an="DE202015100356" pn="DE202015100356U1">法律状态</a>
+                            <a href="javascript:;" class="btn btn-operation" role="proposor" _name="SCHNEIDER ANTON GMBH & CO KG;" _address="" _zipCode="" _country="德国;">申请人</a>
+                            
+                            
+								<a href="javascript:;" role="addAnalysis" class="btn btn-operation">+ 分析库</a>
+							
+                            
+								<a href="javascript:;" role="favorite" class="btn btn-operation">收藏</a>
+							
+							
+                            	<a href="javascript:;" role="translate" _id="DE202015100356U1" class="btn btn-operation btn-translate">翻译</a>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            
+            	
+            	
+            	
+            		<li class="patent normalApp">
+            	
+            
+            
+                <div class="item">
+            <!-- 文献标识 -->
+			<input type="hidden" name="vIdHidden" value='DE202015100364U1' />
+			<!-- 文献唯一标识 -->
+			<input type="hidden" name="idHidden" value='DE202015100364U1'>
+			<!-- 发明名称 -->
+			<input type="hidden" name="titleHidden" value=''>
+			<!-- nrdAN -->
+			<input type="hidden" name="nrdAnHidden" value='DE202015100364'>
+			<!-- nrdAPD -->
+			<input type="hidden" name="nrdAdpHidden" value='2015.01.27'>
+			<!-- nrdPD -->
+			<input type="hidden" name="nrdpdHidden" value='2015.02.05'>
+			<!-- nrdPN -->
+			<input type="hidden" name="nrdPnHidden" value='DE202015100364U1'>
+			<!-- ansn -->
+			<input type="hidden" name="appSnHidden" value='DE201500010036400.0002'>
+			<!-- pnsn -->
+			<input type="hidden" name="pnSnHidden" value='DE20159999999900000000001003640U1.0020'>
+			<input type="hidden" name="langHidden" value='OTHER'>
+			<input type="hidden" name="docStatusHidden" value=''>
+			<!-- 申请人/专利权人 -->
+			<input type="hidden" name="appNameHidden" value='PLASSER & THEURER EXP VON BAHNBAUMASCHINEN;'>
+			<!-- 地址 -->
+			<input type="hidden" name="appAddrHidden" value=''>
+			<!-- 邮编 -->
+			<input type="hidden" name="appZipHidden" value=''>
+			<!-- 申请人/专利权人所在国代码 -->
+			<input type="hidden" name="appCountryHidden" value='奥地利;'>
+                    <div class="item-header clear">
+                        <h1 class="left" style="max-width: 580px;">
+                        	<div style="float: left;"><input type="checkbox" name="patent_flag" /></div>
+                        	
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+                        			<span style="color:#A9A9A9;">该文献无标题</span>
+                        			
+								
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        </h1>
+                        <div class="btn-group left clear" style="float:left">
+                        	
+                        	
+                        	
+                        		
+                        			<a href="javascript:cognationSearchDialog('DE202015100364U1')" class="btn btn-tag">
+                            			同族：4
+									</a>
+                        		
+                        		
+                        	
+                            
+                            
+                            <input type="hidden" class="ttttt" value="DE202015100364U1" />
+                            	
+                           			<a href="javascript:showQuoteDialog('DE202015100364','DE202015100364U1')" class="btn btn-tag">
+                           				引证：2
+                           			</a>
+								
+								
+							
+							
+								
+								
+									<a class="btn btn-tag-unable">
+                            			被引：0
+                            		</a>
+								
+							
+                        </div>
+                    </div>
+                    <div class="item-content clear">
+                        <div class="item-content-body left">
+                            
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>申请号 : </b>DE:202015100364:U</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>申请日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB007','申请日','2015.01.27','false');return false;">2015.01.27</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>公开（公告）号 : </b>DE202015100364U1</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>公开（公告）日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB012','公开（公告）日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">IPC分类号 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="B61D15/00" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				B61D15/00
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="B61D47/00" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				B61D47/00
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="B65G67/10" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				B65G67/10
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="E01B27/02" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				E01B27/02
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">申请（专利权）人 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="PLASSER & THEURER EXP VON BAHNBAUMASCHINEN" onclick="drillSearch('IVDB020','申请（专利权）人','','false',this);return false;">
+											        				PLASSER & THEURER EXP VON BAHNBAUMASCHINEN
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权号 : </b>AT7714</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权日 : </b>2014.02.20</p>
+										    	
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+							
+                        </div>
+                        
+                    </div>
+                    <div class="item-footer">
+                        <div class="btn-group clear">
+                            <a href="javascript:;" class="btn btn-operation" role="detail">详览</a>
+                            <a href="javascript:;" class="btn btn-operation" role="lawState" an="DE202015100364" pn="DE202015100364U1">法律状态</a>
+                            <a href="javascript:;" class="btn btn-operation" role="proposor" _name="PLASSER & THEURER EXP VON BAHNBAUMASCHINEN;" _address="" _zipCode="" _country="奥地利;">申请人</a>
+                            
+                            
+								<a href="javascript:;" role="addAnalysis" class="btn btn-operation">+ 分析库</a>
+							
+                            
+								<a href="javascript:;" role="favorite" class="btn btn-operation">收藏</a>
+							
+							
+                            	<a href="javascript:;" role="translate" _id="DE202015100364U1" class="btn btn-operation btn-translate">翻译</a>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            
+            	
+            	
+            	
+            		<li class="patent normalApp">
+            	
+            
+            
+                <div class="item">
+            <!-- 文献标识 -->
+			<input type="hidden" name="vIdHidden" value='ES1135831U' />
+			<!-- 文献唯一标识 -->
+			<input type="hidden" name="idHidden" value='ES1135831U'>
+			<!-- 发明名称 -->
+			<input type="hidden" name="titleHidden" value=''>
+			<!-- nrdAN -->
+			<input type="hidden" name="nrdAnHidden" value='ES201500047'>
+			<!-- nrdAPD -->
+			<input type="hidden" name="nrdAdpHidden" value='2015.01.23'>
+			<!-- nrdPD -->
+			<input type="hidden" name="nrdpdHidden" value='2015.02.05'>
+			<!-- nrdPN -->
+			<input type="hidden" name="nrdPnHidden" value='ES1135831U'>
+			<!-- ansn -->
+			<input type="hidden" name="appSnHidden" value='ES201500000004700.000U'>
+			<!-- pnsn -->
+			<input type="hidden" name="pnSnHidden" value='ES999999999999000000000113583100U.0000'>
+			<input type="hidden" name="langHidden" value='OTHER'>
+			<input type="hidden" name="docStatusHidden" value=''>
+			<!-- 申请人/专利权人 -->
+			<input type="hidden" name="appNameHidden" value='FIND IT IMP EXP S L;'>
+			<!-- 地址 -->
+			<input type="hidden" name="appAddrHidden" value=''>
+			<!-- 邮编 -->
+			<input type="hidden" name="appZipHidden" value=''>
+			<!-- 申请人/专利权人所在国代码 -->
+			<input type="hidden" name="appCountryHidden" value='西班牙;'>
+                    <div class="item-header clear">
+                        <h1 class="left" style="max-width: 580px;">
+                        	<div style="float: left;"><input type="checkbox" name="patent_flag" /></div>
+                        	
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+                        			<span style="color:#A9A9A9;">该文献无标题</span>
+                        			
+								
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        </h1>
+                        <div class="btn-group left clear" style="float:left">
+                        	
+                        	
+                        	
+                        		
+                        			<a href="javascript:cognationSearchDialog('ES1135831U')" class="btn btn-tag">
+                            			同族：3
+									</a>
+                        		
+                        		
+                        	
+                            
+                            
+                            <input type="hidden" class="ttttt" value="ES1135831U" />
+                            	
+								
+									<a class="btn btn-tag-unable">
+                            			引证：0
+                            		</a>
+								
+							
+							
+								
+								
+									<a class="btn btn-tag-unable">
+                            			被引：0
+                            		</a>
+								
+							
+                        </div>
+                    </div>
+                    <div class="item-content clear">
+                        <div class="item-content-body left">
+                            
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>申请号 : </b>ES:201500047:U</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>申请日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB007','申请日','2015.01.23','false');return false;">2015.01.23</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>公开（公告）号 : </b>ES1135831U</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>公开（公告）日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB012','公开（公告）日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">IPC分类号 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="B67D1/00" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				B67D1/00
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">申请（专利权）人 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="FIND IT IMP EXP S L" onclick="drillSearch('IVDB020','申请（专利权）人','','false',this);return false;">
+											        				FIND IT IMP EXP S L
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">发明人 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="GONZALEZ-QUIROS TELENA SANTIAGO" onclick="drillSearch('IVDB021','发明人','','false',this);return false;">
+											        				GONZALEZ-QUIROS TELENA SANTIAGO
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权号 : </b>ES201500047</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权日 : </b>2015.01.23</p>
+										    	
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+							
+                        </div>
+                        
+                    </div>
+                    <div class="item-footer">
+                        <div class="btn-group clear">
+                            <a href="javascript:;" class="btn btn-operation" role="detail">详览</a>
+                            <a href="javascript:;" class="btn btn-operation" role="lawState" an="ES201500047" pn="ES1135831U">法律状态</a>
+                            <a href="javascript:;" class="btn btn-operation" role="proposor" _name="FIND IT IMP EXP S L;" _address="" _zipCode="" _country="西班牙;">申请人</a>
+                            
+                            
+								<a href="javascript:;" role="addAnalysis" class="btn btn-operation">+ 分析库</a>
+							
+                            
+								<a href="javascript:;" role="favorite" class="btn btn-operation">收藏</a>
+							
+							
+                            	<a href="javascript:;" role="translate" _id="ES1135831U" class="btn btn-operation btn-translate">翻译</a>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            
+            	
+            	
+            	
+            		<li class="patent normalApp">
+            	
+            
+            
+                <div class="item">
+            <!-- 文献标识 -->
+			<input type="hidden" name="vIdHidden" value='DE202015100329U1' />
+			<!-- 文献唯一标识 -->
+			<input type="hidden" name="idHidden" value='DE202015100329U1'>
+			<!-- 发明名称 -->
+			<input type="hidden" name="titleHidden" value=''>
+			<!-- nrdAN -->
+			<input type="hidden" name="nrdAnHidden" value='DE202015100329'>
+			<!-- nrdAPD -->
+			<input type="hidden" name="nrdAdpHidden" value='2015.01.23'>
+			<!-- nrdPD -->
+			<input type="hidden" name="nrdpdHidden" value='2015.02.05'>
+			<!-- nrdPN -->
+			<input type="hidden" name="nrdPnHidden" value='DE202015100329U1'>
+			<!-- ansn -->
+			<input type="hidden" name="appSnHidden" value='DE201500010032900.0002'>
+			<!-- pnsn -->
+			<input type="hidden" name="pnSnHidden" value='DE20159999999900000000001003290U1.0020'>
+			<input type="hidden" name="langHidden" value='OTHER'>
+			<input type="hidden" name="docStatusHidden" value=''>
+			<!-- 申请人/专利权人 -->
+			<input type="hidden" name="appNameHidden" value='WEIDNER ANDREAS;'>
+			<!-- 地址 -->
+			<input type="hidden" name="appAddrHidden" value=''>
+			<!-- 邮编 -->
+			<input type="hidden" name="appZipHidden" value=''>
+			<!-- 申请人/专利权人所在国代码 -->
+			<input type="hidden" name="appCountryHidden" value='德国;'>
+                    <div class="item-header clear">
+                        <h1 class="left" style="max-width: 580px;">
+                        	<div style="float: left;"><input type="checkbox" name="patent_flag" /></div>
+                        	
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+                        			<span style="color:#A9A9A9;">该文献无标题</span>
+                        			
+								
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        </h1>
+                        <div class="btn-group left clear" style="float:left">
+                        	
+                        	
+                        	
+                        		
+                        			<a href="javascript:cognationSearchDialog('DE202015100329U1')" class="btn btn-tag">
+                            			同族：1
+									</a>
+                        		
+                        		
+                        	
+                            
+                            
+                            <input type="hidden" class="ttttt" value="DE202015100329U1" />
+                            	
+								
+									<a class="btn btn-tag-unable">
+                            			引证：0
+                            		</a>
+								
+							
+							
+								
+								
+									<a class="btn btn-tag-unable">
+                            			被引：0
+                            		</a>
+								
+							
+                        </div>
+                    </div>
+                    <div class="item-content clear">
+                        <div class="item-content-body left">
+                            
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>申请号 : </b>DE:202015100329:U</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>申请日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB007','申请日','2015.01.23','false');return false;">2015.01.23</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>公开（公告）号 : </b>DE202015100329U1</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>公开（公告）日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB012','公开（公告）日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">IPC分类号 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="F21V11/00" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				F21V11/00
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">申请（专利权）人 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="WEIDNER ANDREAS" onclick="drillSearch('IVDB020','申请（专利权）人','','false',this);return false;">
+											        				WEIDNER ANDREAS
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权号 : </b>DE202015100329</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权日 : </b>2015.01.23</p>
+										    	
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+							
+                        </div>
+                        
+                    </div>
+                    <div class="item-footer">
+                        <div class="btn-group clear">
+                            <a href="javascript:;" class="btn btn-operation" role="detail">详览</a>
+                            <a href="javascript:;" class="btn btn-operation" role="lawState" an="DE202015100329" pn="DE202015100329U1">法律状态</a>
+                            <a href="javascript:;" class="btn btn-operation" role="proposor" _name="WEIDNER ANDREAS;" _address="" _zipCode="" _country="德国;">申请人</a>
+                            
+                            
+								<a href="javascript:;" role="addAnalysis" class="btn btn-operation">+ 分析库</a>
+							
+                            
+								<a href="javascript:;" role="favorite" class="btn btn-operation">收藏</a>
+							
+							
+                            	<a href="javascript:;" role="translate" _id="DE202015100329U1" class="btn btn-operation btn-translate">翻译</a>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            
+            	
+            	
+            	
+            		<li class="patent normalApp">
+            	
+            
+            
+                <div class="item">
+            <!-- 文献标识 -->
+			<input type="hidden" name="vIdHidden" value='KR20150013932A' />
+			<!-- 文献唯一标识 -->
+			<input type="hidden" name="idHidden" value='KR20150013932A'>
+			<!-- 发明名称 -->
+			<input type="hidden" name="titleHidden" value='CURABLE COMPOSITION FOR SOLID-STATE IMAGING DEVICE, AND PHOTOSENSITIVE LAYER, PERMANENT PATTERN, WAFER-LEVEL LENS, SOLID-STATE IMAGING DEVICE AND PATTERN FORMING METHOD EACH USING THE COMPOSITION'>
+			<!-- nrdAN -->
+			<input type="hidden" name="nrdAnHidden" value='KR20150010672'>
+			<!-- nrdAPD -->
+			<input type="hidden" name="nrdAdpHidden" value='2015.01.22'>
+			<!-- nrdPD -->
+			<input type="hidden" name="nrdpdHidden" value='2015.02.05'>
+			<!-- nrdPN -->
+			<input type="hidden" name="nrdPnHidden" value='KR20150013932A'>
+			<!-- ansn -->
+			<input type="hidden" name="appSnHidden" value='KR201500001067200.0000'>
+			<!-- pnsn -->
+			<input type="hidden" name="pnSnHidden" value='KR201599999999000000000001393200A.0000'>
+			<input type="hidden" name="langHidden" value='OTHER'>
+			<input type="hidden" name="docStatusHidden" value=''>
+			<!-- 申请人/专利权人 -->
+			<input type="hidden" name="appNameHidden" value=''>
+			<!-- 地址 -->
+			<input type="hidden" name="appAddrHidden" value=''>
+			<!-- 邮编 -->
+			<input type="hidden" name="appZipHidden" value=''>
+			<!-- 申请人/专利权人所在国代码 -->
+			<input type="hidden" name="appCountryHidden" value=''>
+                    <div class="item-header clear">
+                        <h1 class="left" style="max-width: 580px;">
+                        	<div style="float: left;"><input type="checkbox" name="patent_flag" /></div>
+                        	
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+                        			
+                        			
+                        				<div style="float: left; max-width: 550px; text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+                        					<a href="javascript:;" _name="CURABLE COMPOSITION FOR SOLID-STATE IMAGING DEVICE, AND PHOTOSENSITIVE LAYER, PERMANENT PATTERN, WAFER-LEVEL LENS, SOLID-STATE IMAGING DEVICE AND PATTERN FORMING METHOD EACH USING THE COMPOSITION" onclick="drillSearch('IVDB077','发明名称','','false',this);return false;" title="CURABLE COMPOSITION FOR SOLID-STATE IMAGING DEVICE, AND PHOTOSENSITIVE LAYER, PERMANENT PATTERN, WAFER-LEVEL LENS, SOLID-STATE IMAGING DEVICE AND PATTERN FORMING METHOD EACH USING THE COMPOSITION">
+                        						<b style="color: #4B4B4B">CURABLE COMPOSITION FOR SOLID-STATE IMAGING DEVICE, AND PHOTOSENSITIVE LAYER, PERMANENT PATTERN, WAFER-LEVEL LENS, SOLID-STATE IMAGING DEVICE AND PATTERN FORMING METHOD EACH USING THE COMPOSITION</b>
+                        					</a>
+                        				</div>
+                        			
+								
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        </h1>
+                        <div class="btn-group left clear" style="float:left">
+                        	
+                        	
+                        	
+                        		
+                        			<a href="javascript:cognationSearchDialog('KR20150013932A')" class="btn btn-tag">
+                            			同族：6
+									</a>
+                        		
+                        		
+                        	
+                            
+                            
+                            <input type="hidden" class="ttttt" value="KR20150013932A" />
+                            	
+								
+									<a class="btn btn-tag-unable">
+                            			引证：0
+                            		</a>
+								
+							
+							
+								
+								
+									<a class="btn btn-tag-unable">
+                            			被引：0
+                            		</a>
+								
+							
+                        </div>
+                    </div>
+                    <div class="item-content clear">
+                        <div class="item-content-body left">
+                            
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>申请号 : </b>KR:20150010672:A</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>申请日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB007','申请日','2015.01.22','false');return false;">2015.01.22</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>公开（公告）号 : </b>KR20150013932A</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>公开（公告）日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB012','公开（公告）日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">IPC分类号 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="G03F7/038" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				G03F7/038
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="G03F7/09" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				G03F7/09
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="C08L79/08" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				C08L79/08
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="G03F7/004" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				G03F7/004
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="C08L77/00" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				C08L77/00
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="G02B5/20" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				G02B5/20
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权号 : </b>JP2011050678</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权日 : </b>2011.03.08</p>
+										    	
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+							
+                        </div>
+                        
+                    </div>
+                    <div class="item-footer">
+                        <div class="btn-group clear">
+                            <a href="javascript:;" class="btn btn-operation" role="detail">详览</a>
+                            <a href="javascript:;" class="btn btn-operation" role="lawState" an="KR20150010672" pn="KR20150013932A">法律状态</a>
+                            <a href="javascript:;" class="btn btn-operation" role="proposor" _name="" _address="" _zipCode="" _country="">申请人</a>
+                            
+                            
+								<a href="javascript:;" role="addAnalysis" class="btn btn-operation">+ 分析库</a>
+							
+                            
+								<a href="javascript:;" role="favorite" class="btn btn-operation">收藏</a>
+							
+							
+                            	<a href="javascript:;" role="translate" _id="KR20150013932A" class="btn btn-operation btn-translate">翻译</a>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            
+            	
+            	
+            		<li class="patent normalApp bottomApp">
+            	
+            	
+            
+            
+                <div class="item">
+            <!-- 文献标识 -->
+			<input type="hidden" name="vIdHidden" value='ES1135806U' />
+			<!-- 文献唯一标识 -->
+			<input type="hidden" name="idHidden" value='ES1135806U'>
+			<!-- 发明名称 -->
+			<input type="hidden" name="titleHidden" value=''>
+			<!-- nrdAN -->
+			<input type="hidden" name="nrdAnHidden" value='ES201530050'>
+			<!-- nrdAPD -->
+			<input type="hidden" name="nrdAdpHidden" value='2015.01.21'>
+			<!-- nrdPD -->
+			<input type="hidden" name="nrdpdHidden" value='2015.02.05'>
+			<!-- nrdPN -->
+			<input type="hidden" name="nrdPnHidden" value='ES1135806U'>
+			<!-- ansn -->
+			<input type="hidden" name="appSnHidden" value='ES201500003005000.000U'>
+			<!-- pnsn -->
+			<input type="hidden" name="pnSnHidden" value='ES999999999999000000000113580600U.0000'>
+			<input type="hidden" name="langHidden" value='OTHER'>
+			<input type="hidden" name="docStatusHidden" value=''>
+			<!-- 申请人/专利权人 -->
+			<input type="hidden" name="appNameHidden" value='RUIZ LEON SERGIO;VECINO RODRIGUEZ JUAN MANUEL;'>
+			<!-- 地址 -->
+			<input type="hidden" name="appAddrHidden" value=''>
+			<!-- 邮编 -->
+			<input type="hidden" name="appZipHidden" value=''>
+			<!-- 申请人/专利权人所在国代码 -->
+			<input type="hidden" name="appCountryHidden" value='西班牙;西班牙;'>
+                    <div class="item-header clear">
+                        <h1 class="left" style="max-width: 580px;">
+                        	<div style="float: left;"><input type="checkbox" name="patent_flag" /></div>
+                        	
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+                        			<span style="color:#A9A9A9;">该文献无标题</span>
+                        			
+								
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        		
+							
+                        </h1>
+                        <div class="btn-group left clear" style="float:left">
+                        	
+                        	
+                        	
+                        		
+                        			<a href="javascript:cognationSearchDialog('ES1135806U')" class="btn btn-tag">
+                            			同族：2
+									</a>
+                        		
+                        		
+                        	
+                            
+                            
+                            <input type="hidden" class="ttttt" value="ES1135806U" />
+                            	
+								
+									<a class="btn btn-tag-unable">
+                            			引证：0
+                            		</a>
+								
+							
+							
+								
+								
+									<a class="btn btn-tag-unable">
+                            			被引：0
+                            		</a>
+								
+							
+                        </div>
+                    </div>
+                    <div class="item-content clear">
+                        <div class="item-content-body left">
+                            
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>申请号 : </b>ES:201530050:U</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>申请日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB007','申请日','2015.01.21','false');return false;">2015.01.21</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>公开（公告）号 : </b>ES1135806U</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        
+										        	<p><b>公开（公告）日 : </b>
+										        		<a href="javascript:;" class="drillSearch" onclick="drillSearch('IVDB012','公开（公告）日','2015.02.05','false');return false;">2015.02.05</a>
+										        	</p>
+										        
+										    
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">IPC分类号 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="A47K10/44" onclick="drillSearch('IVDB045','IPC分类号','','false',this);return false;">
+											        				A47K10/44
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">申请（专利权）人 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="RUIZ LEON SERGIO" onclick="drillSearch('IVDB020','申请（专利权）人','','false',this);return false;">
+											        				RUIZ LEON SERGIO
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="VECINO RODRIGUEZ JUAN MANUEL" onclick="drillSearch('IVDB020','申请（专利权）人','','false',this);return false;">
+											        				VECINO RODRIGUEZ JUAN MANUEL
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										        
+										        	<p class="clear">
+										        	
+										        	
+										        	
+										        		<b class="in-bl" style="float:left;margin:5px 0;">发明人 : </b>
+										        		
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="RUIZ LEON SERGIO" onclick="drillSearch('IVDB021','发明人','','false',this);return false;">
+											        				RUIZ LEON SERGIO
+											        			</a>;
+											        			</span>
+											        		
+											        			<span class="in-bl" style="margin:5px 0;float:left;max-width:300px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
+											        			<a href="javascript:;" _name="VECINO RODRIGUEZ JUAN MANUEL" onclick="drillSearch('IVDB021','发明人','','false',this);return false;">
+											        				VECINO RODRIGUEZ JUAN MANUEL
+											        			</a>;
+											        			</span>
+											        		
+											        	
+										        	
+											        </p>
+										        
+										        
+										    
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权号 : </b>ES201530050</p>
+										    	
+										    
+									
+								
+							
+								
+									
+											
+										    
+										    	
+										    		<p><b>优先权日 : </b>2015.01.21</p>
+										    	
+										    
+									
+								
+							
+								
+									
+								
+							
+								
+									
+								
+							
+							
+                        </div>
+                        
+                    </div>
+                    <div class="item-footer">
+                        <div class="btn-group clear">
+                            <a href="javascript:;" class="btn btn-operation" role="detail">详览</a>
+                            <a href="javascript:;" class="btn btn-operation" role="lawState" an="ES201530050" pn="ES1135806U">法律状态</a>
+                            <a href="javascript:;" class="btn btn-operation" role="proposor" _name="RUIZ LEON SERGIO;VECINO RODRIGUEZ JUAN MANUEL;" _address="" _zipCode="" _country="西班牙;西班牙;">申请人</a>
+                            
+                            
+								<a href="javascript:;" role="addAnalysis" class="btn btn-operation">+ 分析库</a>
+							
+                            
+								<a href="javascript:;" role="favorite" class="btn btn-operation">收藏</a>
+							
+							
+                            	<a href="javascript:;" role="translate" _id="ES1135806U" class="btn btn-operation btn-translate">翻译</a>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="re-page" style="height:44px;margin-top:10px;">
+        <div class="re-page-content clear" style="width:auto;margin:auto;">
+         	<div style='overflow:hidden;float:none;position:static;'><div class="uipage" style='min-width:700px;margin-left:50%;'><link href="http://www.pss-system.gov.cn:80/sipopublicsearch/common-ui/css/uiPage/uiPage.css" rel="stylesheet" type="text/css" /> <div class="page_bottom" style="white-space:nowrap;min-width:700px;margin-left:-50%;"> <a class="active" ><strong>1</strong></a><a href="javascript:gotoPage('resultlistForm',12,true,'search_result')">2</a> <a href="javascript:gotoPage('resultlistForm',24,true,'search_result')">3</a> <a href="javascript:gotoPage('resultlistForm',12,true,'search_result')">下一页</a> <a href="javascript:gotoPage('resultlistForm',24552,true,'search_result')">尾页</a> <p>&nbsp;共&nbsp;2047&nbsp;页&nbsp;</p><p>&nbsp;到第</p><div class="input_bottom"><input id="txt" style="width: 60px;border: none;outline: none;font-size: 14px;background: none;padding:0;text-align: center;border: 0px solid #fff;" type="text" value = '1'  onkeydown = "if(event.keyCode == 13){gotoPageNum('resultlistForm',this.value,'12','2047','1',true,'search_result')}" /> </div><p>页</p><a style='margin-left:15px;' href="javascript:gotoPageNum('resultlistForm',txt.value,'12','2047','1',true,'search_result')">确定</a>  </div> </div></div><form name='resultlistForm' id='resultlistForm'  action='/sipopublicsearch/patentsearch/showSearchResult-startWa.shtml'  method='post'><input type="hidden" name="resultPagination.limit" value="12" id="resultPagination.limit"/><input type="hidden" name="resultPagination.sumLimit" value="10" id="resultPagination.sumLimit"/><input type="hidden" name="resultPagination.start" value="0" id="start"/><input type="hidden" name="resultPagination.totalCount" value="24561" id="resultPagination.totalCount"/><input type="hidden" name="searchCondition.searchType" value="Sino_foreign"/><input type="hidden" name="searchCondition.dbId" value=""/><input type="hidden" name="searchCondition.extendInfo['STRATEGY']" value="STRATEGY_CALCULATE"/><input type="hidden" name="searchCondition.strategy" value=""/><input type="hidden" name="searchCondition.literatureSF" value="公开（公告）日=2015-01-01"/><input type="hidden" name="searchCondition.targetLanguage" value=""/><input type="hidden" name="searchCondition.originalLanguage" value=""/><input type="hidden" name="searchCondition.extendInfo['MODE']" value="MODE_TABLE"/><input type="hidden" name="searchCondition.searchKeywords" value="[2][ ]{0,}[0][ ]{0,}[1][ ]{0,}[5][ ]{0,}[.][ ]{0,}[0][ ]{0,}[1][ ]{0,}[.][ ]{0,}[0][ ]{0,}[1][ ]{0,}"/><input type="hidden" name="searchCondition.searchExp" value="公开（公告）日=2015-01-01"/><input type="hidden" name="resultPagination.sumLimit" value="10"/><input type="hidden" name="searchCondition.executableSearchExp" value="VDB:(PD='2015-02-05')"/><input type="hidden" name="wee.bizlog.modulelevel" value="0200201"/></form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+	$('img.absImg').lazyload();
+</script>
+	
+	
+	
+
+	<!-- 设置排序最大数量 -->
+	<input type="hidden" id="result_maxSortNum" name="maxSortNum" value="10000">
+	<!-- 获取的记录总数 -->
+	<input type="hidden" id="result_totalCount" value="24561">
+<script>
+	function addParamToPageTag() {
+		/**resultlistForm为翻页组件ID**/
+		var start = $('#resultlistForm input[name="resultPagination.start"]').val();
+		// 第一次进入时才加载
+		if (start == 0) {
+			// 可执行检索式
+			var exe = $('#resultlistForm input[name="searchCondition.executableSearchExp"]').val();
+			if (exe == undefined || exe == '' || exe == null) {
+				$('#resultlistForm input[name="searchCondition.executableSearchExp"]').remove();
+				$('#resultlistForm').append('<input type="hidden" name="searchCondition.executableSearchExp" value="'+ $('#result_executableSearchExp').text() + '"/>');
+				exe = $('#resultlistForm input[name="searchCondition.executableSearchExp"]').val();
+			}
+			var drillSearchFlag = $('#drillSearchFlag');
+			if(drillSearchFlag == '' || drillSearchFlag == null || drillSearchFlag == undefined || drillSearchFlag == 'undefined'){
+				// 检索式id
+				var ssId = $('#resultlistForm input[name="searchCondition.executableSearchExp"]').val();
+				if (ssId == undefined || ssId == '' || ssId == null) {
+					$('#resultlistForm input[name="searchCondition.executableSearchExp"]').remove();
+					$('#resultlistForm').append('<input type="hidden" name="searchCondition.ssId" value="'+ $('#result_ssId').val() + '"/>');
+				}
+			}
+			// dbId
+			var dbId = $('#resultlistForm input[name="searchCondition.dbId"]').val();
+			if (dbId == undefined || dbId == '' || dbId == null) {
+				$('#resultlistForm input[name="searchCondition.dbId"]').remove();
+				$('#resultlistForm').append('<input type="hidden" name="searchCondition.dbId" value=""/>');
+			}
+			// 判断可执行检索式中是否有dbid
+			if (exe == undefined || exe == '' || exe == null || exe.indexOf('VDB:') == -1) {
+				$('#resultlistForm input[name="searchCondition.dbId"]').val('VDB');
+			} else {
+				$('#resultlistForm input[name="searchCondition.dbId"]').val('');
+			}
+			// 检索文献库用检索式
+			var literatureSF = $('#resultlistForm input[name="searchCondition.literatureSF"]').val();
+			if (literatureSF == undefined || literatureSF == '' || literatureSF == null) {
+				$('#resultlistForm input[name="searchCondition.literatureSF"]').remove();
+				$('#resultlistForm').append("<input type=\"hidden\" name=\"searchCondition.literatureSF\" value=\""+ $('#result_literatureSF').text().replace(/"/gm,"&quot;") + "\"/>");
+			}
+			// 检索文献库用检索策略
+			var strategy = $('#resultlistForm input[name="searchCondition.strategy"]').val();
+			if (strategy == undefined || strategy == '' || strategy == null) {
+				$('#resultlistForm input[name="searchCondition.strategy"]').remove();
+				$('#resultlistForm').append('<input type="hidden" name="searchCondition.strategy" value="'+ $('#result_strategy').val() + '"/>');
+			}
+		}
+		// 检索因子--每次都重新传，因为分页标签不支持传数组
+		var keys = $('#resultlistForm input[name="searchCondition.searchKeywords"]').val();
+		var keywords = dealSearchKeywords;
+		if (keys == undefined) {
+			if (keywords.length > 0 && keywords[0] != '') {
+				keywords = new Array("").concat(keywords);
+			}
+		} else {
+			$('#resultlistForm input[name="searchCondition.searchKeywords"]') .remove();
+		}
+		$.each(keywords, function(i, value) {
+			$('#resultlistForm').append('<input type="hidden" name="searchCondition.searchKeywords" value="' + value + '"/>');
+		});
+	}
+	addParamToPageTag();
+</script>
+
+
+
+<!--  跳转详览 -->
+<form action="/sipopublicsearch/patentsearch/showViewList-jumpToView.shtml" target="_blank" method="post" id="detailViewForm">
+	<input type="hidden" name="viewQC.type" value="" id="viewQCType"/>
+	<input type="hidden" name="viewQC.viewLiteraQCList[0].type" value="COGNATION" id="viewQC_viewLiteraQCList_0__type"/>
+	<input type="hidden" name="viewQC.viewLiteraQCList[0].srcCnName" value="" id="coSrcCnName"/>
+	<input type="hidden" name="viewQC.viewLiteraQCList[0].srcEnName" value="" id="coSrcEnName"/>
+	<input type="hidden" name="viewQC.viewLiteraQCList[0].searchCondition.searchExp" value="" id="coExp"/>
+	<input type="hidden" name="viewQC.viewLiteraQCList[0].searchCondition.dbId" value="VDB" id="viewQC_viewLiteraQCList_0__searchCondition_dbId"/>
+	<input type="hidden" name="viewQC.viewLiteraQCList[1].type" value="ADDUCE" id="viewQC_viewLiteraQCList_1__type"/>
+	<input type="hidden" name="viewQC.viewLiteraQCList[1].srcCnName" value="" id="paSrcCnName"/>
+	<input type="hidden" name="viewQC.viewLiteraQCList[1].srcEnName" value="" id="paSrcEnName"/>
+	<input type="hidden" name="viewQC.viewLiteraQCList[1].searchCondition.searchExp" value="" id="paExp"/>
+	<input type="hidden" name="viewQC.viewLiteraQCList[1].searchCondition.dbId" value="VDB" id="viewQC_viewLiteraQCList_1__searchCondition_dbId"/>
+	<input type="hidden" name="viewQC.viewLiteraQCList[2].type" value="ADDUCED" id="viewQC_viewLiteraQCList_2__type"/>
+	<input type="hidden" name="viewQC.viewLiteraQCList[2].srcCnName" value="" id="citSrcCnName"/>
+	<input type="hidden" name="viewQC.viewLiteraQCList[2].srcEnName" value="" id="citSrcEnName"/>
+	<input type="hidden" name="viewQC.viewLiteraQCList[2].searchCondition.searchExp" value="" id="citExp"/>
+	<input type="hidden" name="viewQC.viewLiteraQCList[2].searchCondition.dbId" value="VDB" id="viewQC_viewLiteraQCList_2__searchCondition_dbId"/>
+</form>
+</div>
+</div>
