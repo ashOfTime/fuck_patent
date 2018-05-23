@@ -1,7 +1,10 @@
-# -*- coding: utf-8 -*- 
 """
-从datetime数据库里取出日期数据、页码信息，返回每一页的详情信息，单线程版本
+万恶的国网更新了，返回的数据变成json格式的了，为了保持数据的一致性，把之前保存的二进制的content文件重新爬取，变成json格式
+
 """
+
+
+
 import requests
 import pymysql
 import json
@@ -22,7 +25,7 @@ def get_data_from_datetime():
 
 	cursor.close()
 	db.close()
-
+	print(t)
 	return t
 
 def read_cookies_from_local():
@@ -72,7 +75,7 @@ def spider(datetime, start, totalCount, cookies):
 	]
 
 	response = requests.post('http://www.pss-system.gov.cn/sipopublicsearch/patentsearch/showSearchResult-startWa.shtml', headers=headers, cookies=cookies, data=data)
-	print(response.json()['searchResultDTO']['searchResultRecord'][0]['recordList'])
+	print(response.json()['searchResultDTO']['searchResultRecord'][0]['recordList'][3]['itemValue'])
 
 	if response.text.find('<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">') != -1:
 		status = 2
@@ -103,7 +106,7 @@ def control():
 	datetime = t[1]
 	start = t[-2]
 	totalCount = t[2]
-	print(t)
+	print(t[:-1])
 	content,status = spider(datetime, start, totalCount, cookies)
 
 	if status == 1:
@@ -114,9 +117,7 @@ def control():
 		get_cookies('keen123', 'keen123')
 
 
-
-
-
 if __name__ == '__main__':
 	#get_cookies('keen123', 'keen123')
-	control()
+	get_data_from_datetime()
+	#control()
