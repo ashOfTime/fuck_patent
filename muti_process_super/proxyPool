@@ -1,0 +1,35 @@
+import redis
+import time
+import requests
+from multiprocessing import Pool
+from multiprocessing.dummy import Pool as ThreadPool
+
+min_proxy = 20
+
+
+
+r = redis.Redis('localhost', '6379')
+
+while True:
+	proxy_len = r.llen('proxyTest')
+	if proxy_len < min_proxy:
+		#new_proxy = requests.get('')
+		#r.lpush(new)procy
+	time.sleep(7)
+
+
+	
+#r.delete('proxyTest')
+
+# for i in range(10):
+# 	r.lpush('proxyTest', i)
+# print(r.llen('proxyTest'))
+# print(r.rpop('proxyTest'))
+# print(r.scard('proxyTest'))
+# print(r.srem('proxyTest'))
+# def pop_proxy(fake):
+# 	r = redis.Redis('localhost', '6379')
+# 	print(r.rpop('proxyTest'))
+
+# pool = Pool(2)
+# pool.map(pop_proxy,[1,1])

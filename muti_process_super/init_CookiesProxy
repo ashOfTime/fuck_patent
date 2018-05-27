@@ -1,0 +1,68 @@
+"""
+初始化代理池和cookies池，保证里面有一定的可用资源
+"""
+
+import redis
+import time
+import requests
+from multiprocessing import Pool
+from multiprocessing.dummy import Pool as ThreadPool
+
+from setting import min_cookies,min_proxys
+from multiprocessing import Pool
+from multiprocessing.dummy import Pool as ThreadPool
+
+r = redis.Redis('localhost', '6379')
+
+def valid(ip):
+	proxies={
+	'http':'http://{}'.format(ip),
+	'https':'https://{}'.format(ip)
+	            }
+	flag = 0
+	try:
+		rsp = requests.get('http://www.pss-system.gov.cn/sipopublicsearch/portal/uiIndex.shtml', proxies=proxies)
+		if rsp.status_code == 200:
+			#print(rsp.text)
+			flag = 1
+	except Exception as e:
+		print(e)
+		flag = 0
+
+	return flag,ip
+
+
+
+#初始化 代理池
+while True:
+	
+	proxys_len = r.llen('proxys')
+	print('可用ip的数量为',proxys_len)
+	while proxys_len < min_proxys:
+		valid_pool = ThreadPool(5)
+		ip_list = requests.get('http://dynamic.goubanjia.com/dynamic/get/45d0e4cd0b14c3c9bcd174948ff5e969.html?sep=3').text.split('\n')
+		print(ip_list)
+		results = valid_pool.map(valid, ip_list[:-1])
+		for result in results:
+			if result[0] == 1:
+				r.lpush('proxys', result[-1])
+				print(result[-1])
+		proxys_len = r.llen('proxys')
+		print(proxys_len)
+		time.sleep(3)
+
+	time.sleep(2)
+
+
+#初始化 cookie池
+# cookies_len = r.llen('cookies')
+# while proxys_len < min_proxys:
+# 	"""
+# 	拿着从ip池里取出的ip去登陆，如果成功把ip和cookies一起写回去
+# 	"""
+# 	ip = r.rpop('proxys')
+# 	cookies,status = get_cookies(ip)
+# 	if status == 1:
+# 		r.lpush('cookies', cookie)
+# 		r.lpush('proxys', ip)
+# 	proxys_len = r.llen('proxys')

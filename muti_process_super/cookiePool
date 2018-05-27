@@ -1,0 +1,18 @@
+import redis
+import time
+import requests
+from multiprocessing import Pool
+from multiprocessing.dummy import Pool as ThreadPool
+
+from setting import min_cookies
+
+
+
+r = redis.Redis('localhost', '6379')
+
+while True:
+	cookies_len = r.llen('cookies')
+	if cookies_len < min_proxy:
+		#登陆
+		#r.lpush(new)procy
+	time.sleep(7)

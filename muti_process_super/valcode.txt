@@ -1,0 +1,1142 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>专利检索及分析</title>
+				<link rel="stylesheet" type="text/css" href="/sipopublicsearch/common-ui/css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="/sipopublicsearch/common-ui/css/base.css"/>
+		<script type="text/javascript" src="/sipopublicsearch/common-ui/js/jquery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/sipopublicsearch/wee/platform/common/js/local/package_zh_CN.js"></script>
+		<script type="text/javascript"> var contextPath="/sipopublicsearch";</script>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link href="http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uihome/css/home.css?v=20180527" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/common-ui/js/SuperSlide2.1/jquery.SuperSlide.2.1.1.source.js?v=20180527"></script>
+		<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/common-ui/js/common.js?v=20180527"></script>
+		<!-- autocomplete -->
+		<link href="http://www.pss-system.gov.cn:80/sipopublicsearch/wee/jquery/plugin/autocomplete/jquery.autocomplete.css?v=20180527" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src='http://www.pss-system.gov.cn:80/sipopublicsearch/wee/jquery/plugin/autocomplete/jquery.autocomplete.js?v=20180527'></script>
+		<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/common-ui/js/lazyload/lazyload.js?v=20180527"></script>
+		<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/search-ui/common/js/common.js?v=20180527"></script>
+		<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uihome/js/home.js?v=20180527"></script>
+		<script type="text/javascript" src='http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uilogin/js/mainLogin.js?v=20180527'></script>
+		<script type="text/javascript" src='http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uilogin/js/encodeForm.js?v=20180527'></script>
+		<script type="text/javascript" src='http://www.pss-system.gov.cn:80/sipopublicsearch/wee/platform/common/js/common.min.js?v=20180527'></script>
+		<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/common/js/onCheckOnPage.js?version=v1&v=20180527"></script>
+	</head>
+	<body id="globleBody">
+		
+			
+			
+			
+		
+
+
+<head>
+	<script  src="/sipopublicsearch/common-ui/js/artDialog/dist/dialog-min.js"></script>
+<link rel="stylesheet" href="/sipopublicsearch/common-ui/js/artDialog/css/ui-dialog.css" type="text/css"></link>
+
+	<script type="text/javascript" src="http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uihome/js/head.js?v=20180527"></script>
+</head>
+<!--头部-->
+<div class="header">
+	<input type="hidden" value="home" id="menu_pos" />
+	<input type="hidden" value="0" id="child_pos" />
+    <div class="banner">
+        <div class="banner-wrap clear">
+       	    <input type="hidden" name="" value="" id="userName"/>
+       	    
+            	<div class="wrap-left"><p>欢迎访问专利检索及分析,<a href="/sipopublicsearch/portal/uilogin-forwardLogin.shtml"  class="login-btn">请登录</a><a href="/sipopublicsearch/portal/uiregister-showRegisterPage.shtml" class="login-btn">免费注册</a></p></div>
+            
+            
+            <div class="wrap-right clear">
+                <ul>
+                	
+                	
+                	
+                    <li><a class="nav-top-navigation" href="/sipopublicsearch/portal/showPortalMap-jumpToPortalMap.shtml">网站导航</a></li>
+                    <li><a id="helpCenter" class="nav-top-help" href="/sipopublicsearch/sysmgr/uishowHelp-forwardShowHelpPage.shtml">帮助中心</a></li>
+                </ul></div>
+        </div>
+    </div>
+    <div class="wrap clear">
+        <div class="logo-img">
+            <!--<h1>专利检索及分析</h1>
+            <p>Patent Search and Analysis of SIPO</p>-->
+            
+        </div>
+        <div class="international-language">
+            <ul class="clear">
+                <li class="language active"><a href="/sipopublicsearch/portal/uiIndex.shtml">中文</a></li>
+                <li class="interval"></li>
+                <li class="language"><a href="/sipopublicsearch/inportal/i18n.shtml?params=902F004CA61084A284089435EAAEA94F59CC921A916ADCEB">English</a></li>
+                <li class="interval"></li>
+                <li class="language"><a href="/sipopublicsearch/inportal/i18n.shtml?params=902F004CA61084A2C83C2F9AB588710259B5FB7592E2B60D">Français</a></li>
+                <li class="interval"></li>
+                <li class="language"><a href="/sipopublicsearch/inportal/i18n.shtml?params=902F004CA61084A231943C2652237DE3B84E929A42015B22">Deutsch</a></li>
+                <li class="interval"></li>
+                <li class="language"><a href="/sipopublicsearch/inportal/i18n.shtml?params=902F004CA61084A2F667D9A1C872FE795C601B63BFA180D7">русский</a></li>
+                <li class="interval"></li>
+                <li class="language"><a href="/sipopublicsearch/inportal/i18n.shtml?params=902F004CA61084A284089435EAAEA94F42D889CB49B39794">Español</a></li>
+                <li class="interval"></li>
+                <li class="language"><a href="/sipopublicsearch/inportal/i18n.shtml?params=902F004CA61084A2E4691F656F3C01EA88747C2910639541">Português</a></li>
+                <li class="interval"></li>
+                <li class="language"><a href="/sipopublicsearch/inportal/i18n.shtml?params=902F004CA61084A2C2D4003C67896C4B144DA36057CC742D">عربي</a></li>
+                <li class="interval"></li>
+                <li class="language"><a href="/sipopublicsearch/inportal/i18n.shtml?params=902F004CA61084A2B16B643BDEC8BF0CE92E912833085297">日本語</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="nav-wrap clear">
+        	
+        		<div class="all-classify">
+                	<h2>分类导航</h2>
+                	<div class="class-menu">
+                    	<ul class="clear">
+                        	<li><a href="javascript:void(0);" onClick="queryIpc('A')">A部：人类生活必需</a></li>
+                        	<li><a href="javascript:void(0);" onClick="queryIpc('B')">B部：作业&nbsp;&nbsp;运输</a></li>
+                        	<li><a href="javascript:void(0);" onClick="queryIpc('C')">C部：化学&nbsp;&nbsp;冶金</a></li>
+                        	<li><a href="javascript:void(0);" onClick="queryIpc('D')">D部：纺织&nbsp;&nbsp;造纸</a></li>
+                        	<li><a href="javascript:void(0);" onClick="queryIpc('E')">E部：固定建筑物</a></li>
+                        	<li><a href="javascript:void(0);" style="line-height: 30px;" onClick="queryIpc('F')">F部：机械工程&nbsp;&nbsp;照明&nbsp;&nbsp;加热&nbsp;&nbsp;武器&nbsp;&nbsp;爆破</a></li>
+                        	<li><a href="javascript:void(0);" onClick="queryIpc('G')">G部：物理</a></li>
+                        	<li style="border:none;"><a href="javascript:void(0);" onClick="queryIpc('H')">H部：电学</a></li>
+                    	</ul>
+                	</div>
+            	</div>
+        	
+            
+            	<div class="nav-items">
+                	<ul class="clear">
+                    	<li name="home"><a href="/sipopublicsearch/portal/uiIndex.shtml">首页</a></li>
+                    	<li>
+                    		<a id="gen_head" href="javascript:void(0);">专利检索</a>
+                    		<ul class="vertical">
+                    			<li menuId="ui_general_search" class="main_menuLI"><a href="javascript:;">常规检索</a></li>
+                    			<li menuId="ui_tableSearch" class="main_menuLI"><a href="javascript:;">高级检索</a></li>
+                    			<li menuId="ui_navgationSearch" class="main_menuLI"><a href="javascript:;">导航检索</a></li>
+                    			<!--<li><a href="/sipopublicsearch/patentsearch/medicineSearch-initMedicineSearch.shtml">药物检索</a></li>
+                    			<li menuId="ui_buildSearch" class="main_menuLI"><a href="javascript:;">自建专题库检索</a></li>-->
+                    			<li menuId="ui_commandSearch" class="main_menuLI"><a href="javascript:;">命令行检索</a></li>
+                    		</ul>
+                    	</li>
+                    	<li>
+                    		<a href="javascript:void(0);"  onClick="jumpToAnalysis()">专利分析</a>
+                    		<ul class="vertical">
+                    			<li><a href="javascript:void(0);" onclick="jumpToAnalysisMenu(1)">申请人分析</a></li>
+                    			<li><a href="javascript:void(0);" onclick="jumpToAnalysisMenu(2)">发明人分析</a></li>
+                    			<li><a href="javascript:void(0);" onclick="jumpToAnalysisMenu(3)">区域分析</a></li>
+                    			<li><a href="javascript:void(0);" onclick="jumpToAnalysisMenu(4)">技术领域分析</a></li>
+                    			<li><a href="javascript:void(0);" onclick="jumpToAnalysisMenu(5)">中国专项分析</a></li>
+                    			<li><a href="javascript:void(0);" onclick="jumpToAnalysisMenu(6)">高级分析</a></li>
+                    		</ul>
+                    	</li>
+                    	<li menuId="ui_medcineSearch" class="main_menuLI"><a href="javascript:;">药物检索</a></li>
+                    	<li><a href="/sipopublicsearch/portal/uiInitPortalHome-showServiceMessage.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522260F37FC57643413C2" target="_blank">专利服务</a></li>
+                	</ul>
+            	</div>
+            
+            
+            
+            
+            
+            
+        </div>
+    </div>
+    <div id="centerContent" style="display:none">
+    	<ul>
+    		<li style="height:30px;"><a  href="/sipopublicsearch/portal/uishowTrain-fowardTrain.shtml" ><font style="color:#333">培训视频</font></a></li>
+    		<li style="height:30px;"><a  href="/sipopublicsearch/sysmgr/uishowHelp-forwardShowHelpPage.shtml" ><font style="color:#333">系统帮助</font></a></li>
+    		<li style="height:30px;"><a  href="/sipopublicsearch/portal/uiportalSearch-portalSearchHome.shtml" ><font style="color:#333">站内检索</font></a></li>
+    	</ul>
+    </div>
+</div>
+<form id="queryIpcForm" name="queryIpcForm" action="/sipopublicsearch/patentsearch/showNavigationClassifyNum-showBasicClassifyNumPageByIPC.shtml;jsessionid=UUOfP5F0ywvH3G4THszXckt0_I8rwkNGFjAMSUijGJ7qaLMbTMQb!1369308875!1783864925" target="_blank" method="post">
+	<input id="searchType" type="hidden" name="queryIpcQC.searchType" />
+	<input id="searchCondition" type="hidden" name="queryIpcQC.searchCondition" />
+</form>
+
+
+
+<form id="fowardLoginForm" name="fowardLoginForm" action="/sipopublicsearch/portal/uilogin-forwardLogin.shtml;jsessionid=UUOfP5F0ywvH3G4THszXckt0_I8rwkNGFjAMSUijGJ7qaLMbTMQb!1369308875!1783864925" method="post">
+	<input id="forward_url" type="hidden" name="j_loginsuccess_url" />
+</form>
+
+
+
+	
+		
+		
+
+
+<div class="new-year-main-body">
+<div class="main-body clear" style="margin-bottom:0;">
+    <div class="main-top">
+        <div class="main-left"></div>
+        <div class="main-middle">
+        	<div id="playBox" class="Carousel-figure">
+	        	<div class="smalltitle">
+			      <ul class="clear">
+			      	<li></li>
+			      	<li></li>
+			      	<li></li>
+			      </ul>
+			    </div>
+	            <ul class="" id="oUlplay" class="oUlplay">
+	                <li><a href="/sipopublicsearch/portal/uiInitPortalHome-showDataRange.shtml"><img src="http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uihome/images/home0.png?v=20180527" alt=""/></a></li>
+	                <li><a href="/sipopublicsearch/portal/uiInitPortalHome-showWelcomePage.shtml"><img alt=""/></a></li>
+	                <li><a href="/sipopublicsearch/portal/uiInitPortalHome-showWelcomePage.shtml"><img alt=""/></a></li>
+	                <li><a href="/sipopublicsearch/portal/uiInitPortalHome-showWelcomePage.shtml"><img alt=""/></a></li>
+	            </ul>
+            </div>
+            <script type="text/javascript">
+            	$("#playBox").slide({
+            		 mainCell:"#oUlplay",
+            		 titCell : ".smalltitle ul li",
+            		 autoPlay : true,
+            		 interTime:5000,
+            		 startFun:function(i,c){
+            			//$("#oUlplay li:eq("+i+")").find("img").attr("src",contextPath+"/common-ui/theme/new-year/images/home"+i+".png");
+            			 $("#oUlplay li:eq("+i+")").find("img").attr("src",contextPath+"/portal/app/uihome/images/home"+i+".png");
+           		 	 }
+            	});
+            </script>
+            <div id="oftenFunction" class="often-function">
+                <div class="title">
+                    <h2>我的常用功能</h2>
+                    
+                    <span>
+                    	
+                    </span>
+                    
+               </div>
+               <div class="often-content">
+                   <a href="javascript:void(0);" class="often-prev"></a>
+                   <div class="often-items">
+                       <div class="often-wrap clear">
+                       	   
+                       	   
+                       	   		
+                       	   		
+	                       	   	    <div class="often-model" style="width: 72px;">
+	                       	   	   	   <a href="javascript:void(0);" onclick="jumpToUrl('/patentsearch/medicineSearch-initMedicineSearch.shtml','search_medicine')">
+	                       	   	   	   
+	                       	   	   	      <!--<img src="http://www.pss-system.gov.cn:80/sipopublicsearch/-180px?v=20180527" alt=""/>
+	                       	   	   	      --><div style="background:url('http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uihome/images/ctools-all.png?v=20180527') center no-repeat;background-position: 0px -180px ;height:60px;width:60px;margin:0px 0px 0px 6px; "></div>
+	                       	   	   	      <h3>药物检索</h3>
+	                       	   	   	   </a>
+	                           	   	</div>
+	                           	
+		                       	
+	                       	   	    <div class="often-model" style="width: 72px;">
+	                       	   	   	   <a href="javascript:void(0);" onclick="jumpToUrl('/patentsearch/tableSearch-showTableSearchIndex.shtml','search_table')">
+	                       	   	   	   
+	                       	   	   	      <!--<img src="http://www.pss-system.gov.cn:80/sipopublicsearch/-420px?v=20180527" alt=""/>
+	                       	   	   	      --><div style="background:url('http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uihome/images/ctools-all.png?v=20180527') center no-repeat;background-position: 0px -420px ;height:60px;width:60px;margin:0px 0px 0px 6px; "></div>
+	                       	   	   	      <h3>高级检索</h3>
+	                       	   	   	   </a>
+	                           	   	</div>
+	                           	
+		                       	
+	                       	   	    <div class="often-model" style="width: 72px;">
+	                       	   	   	   <a href="javascript:void(0);" onclick="jumpToUrl('/patentsearch/searchHomeIndex-searchHomeIndex.shtml','search_general')">
+	                       	   	   	   
+	                       	   	   	      <!--<img src="http://www.pss-system.gov.cn:80/sipopublicsearch/-60px?v=20180527" alt=""/>
+	                       	   	   	      --><div style="background:url('http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uihome/images/ctools-all.png?v=20180527') center no-repeat;background-position: 0px -60px ;height:60px;width:60px;margin:0px 0px 0px 6px; "></div>
+	                       	   	   	      <h3>常规检索</h3>
+	                       	   	   	   </a>
+	                           	   	</div>
+	                           	
+		                       	
+	                       	   	    <div class="often-model" style="width: 72px;">
+	                       	   	   	   <a href="javascript:void(0);" onclick="jumpToUrl('/analysis/maintainProject-queryProjectList.shtml?params=507565BBBD5951450584D0EAA3DCA55445F13A653FD99940CFEF1192650B849B507565BBBD595145055F3BC83B9DF8EE','analysis_project')">
+	                       	   	   	   
+	                       	   	   	      <!--<img src="http://www.pss-system.gov.cn:80/sipopublicsearch/-120px?v=20180527" alt=""/>
+	                       	   	   	      --><div style="background:url('http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uihome/images/ctools-all.png?v=20180527') center no-repeat;background-position: 0px -120px ;height:60px;width:60px;margin:0px 0px 0px 6px; "></div>
+	                       	   	   	      <h3>分析文献库</h3>
+	                       	   	   	   </a>
+	                           	   	</div>
+	                           	
+		                       	
+	                       	   	    <div class="often-model" style="width: 72px;">
+	                       	   	   	   <a href="javascript:void(0);" onclick="jumpToUrl('/analysis/proposetStat-initProposerTrend.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522261A645708DE09C223E3775CD2E8DEA06641B4DB59FD11B7F44158339E1079C94A83A21BEF9E0976ADB04118DE11967B923716157CED29903DBC193A51ABFB1C0767FF0A36277556B6','analysis_proposer')">
+	                       	   	   	   
+	                       	   	   	      <!--<img src="http://www.pss-system.gov.cn:80/sipopublicsearch/-360px?v=20180527" alt=""/>
+	                       	   	   	      --><div style="background:url('http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uihome/images/ctools-all.png?v=20180527') center no-repeat;background-position: 0px -360px ;height:60px;width:60px;margin:0px 0px 0px 6px; "></div>
+	                       	   	   	      <h3>申请人分析</h3>
+	                       	   	   	   </a>
+	                           	   	</div>
+	                           	
+		                       	
+	                       	   	    <div class="often-model" style="width: 72px;">
+	                       	   	   	   <a href="javascript:void(0);" onclick="jumpToUrl('/analysis/inventorStat-initInventorTrend.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B152226208D1BC4F4CC4630E3775CD2E8DEA06641B4DB59FD11B7F47150A73839E15B839EDB9FCD2F22E083A5515747FC08641525EE0710877A96F09FDCD3BD8625ADA1507565BBBD595145055F3BC83B9DF8EE','analysis_inventor')">
+	                       	   	   	   
+	                       	   	   	      <!--<img src="http://www.pss-system.gov.cn:80/sipopublicsearch/-300px?v=20180527" alt=""/>
+	                       	   	   	      --><div style="background:url('http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uihome/images/ctools-all.png?v=20180527') center no-repeat;background-position: 0px -300px ;height:60px;width:60px;margin:0px 0px 0px 6px; "></div>
+	                       	   	   	      <h3>发明人分析</h3>
+	                       	   	   	   </a>
+	                           	   	</div>
+	                           	
+		                       	
+	                       	   	    <div class="often-model" style="width: 72px;">
+	                       	   	   	   <a href="javascript:void(0);" onclick="jumpToUrl('/analysis/area-initAreaCompose.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B15222622D237D8EE2C5042E3775CD2E8DEA06641B4DB59FD11B7F4828E5FD87FC0763119B70C495B6572A658F9784832BA71824E42A56AA723EC017547ED1BBA506D18','analysis_region')">
+	                       	   	   	   
+	                       	   	   	      <!--<img src="http://www.pss-system.gov.cn:80/sipopublicsearch/0px?v=20180527" alt=""/>
+	                       	   	   	      --><div style="background:url('http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uihome/images/ctools-all.png?v=20180527') center no-repeat;background-position: 0px 0px ;height:60px;width:60px;margin:0px 0px 0px 6px; "></div>
+	                       	   	   	      <h3>区域分析</h3>
+	                       	   	   	   </a>
+	                           	   	</div>
+	                           	
+		                       	
+	                       	   	    <div class="often-model" style="width: 72px;">
+	                       	   	   	   <a href="javascript:void(0);" onclick="jumpToUrl('/analysis/ipcStat-initIpcTrend.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B15222693AB359C0CF2316DE3775CD2E8DEA06641B4DB59FD11B7F4861862DC4E28590B4F99339B6E3FAD202B89E7D209C04B84D53836F21482A5954B7461133763B4F7','analysis_ipc')">
+	                       	   	   	   
+	                       	   	   	      <!--<img src="http://www.pss-system.gov.cn:80/sipopublicsearch/-480px?v=20180527" alt=""/>
+	                       	   	   	      --><div style="background:url('http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uihome/images/ctools-all.png?v=20180527') center no-repeat;background-position: 0px -480px ;height:60px;width:60px;margin:0px 0px 0px 6px; "></div>
+	                       	   	   	      <h3>技术领域分析</h3>
+	                       	   	   	   </a>
+	                           	   	</div>
+	                           	
+		                       	
+		                       	
+                       	   
+                       </div>
+                   </div>
+                   <a href="javascript:void(0);" class="often-next"></a>
+               </div>
+               <script type="text/javascript">
+               		$('.often-content').slide({type:"slide",effect:"leftLoop",trigger : "click",autoPlay:false,mainCell:".often-wrap",scroll:1,vis:6,prevCell:".often-prev",nextCell:".often-next"});
+               </script>
+           </div>
+
+       </div>
+       <div class="main-right">
+           <div class="notice list">
+               <div class="title">
+                   <h2>通知公告</h2>
+                   <span>
+                   		<a href="/sipopublicsearch/portal/showUIContentList-showContentList.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B152226A37198B1101B14693DF73B65CCBCC1A6400D732514D4CEB1">
+                   			更多
+                   		</a>
+                   	</span>
+               </div>
+               <div class="list-info-content">
+                   <ul class="list-info">
+                   	   
+                   	   	 <li class="list-items odd">
+                   	   	 	<a href="/sipopublicsearch/portal/showUIContentDetail-showContentDetail.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522262FA5BBC8CD3E57403028E34AB967B99C1A3CBF1B0BA1D2A2E4337E60E6E839D5908C640B274CE95DAAD2A65BC68091958B748AAB9F04D1FF51E02730C0574CD9400D732514D4CEB1">
+	                   	   	 	<span class="list-title" title="政府网站工作年度报表">
+	                   	   	 		政府网站工作年度报表
+	                   	   	 		
+	                   	   	 	</span>
+                   	   	 	</a>
+                   	   	 </li>
+                   	   
+                   	   	 <li class="list-items ">
+                   	   	 	<a href="/sipopublicsearch/portal/showUIContentDetail-showContentDetail.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522262FA5BBC8CD3E57403028E34AB967B99C32E153B03A406C92721AFBE1C11D83EEEC5874CA0A519E71ACB0F9046C2F5D3C9A36D2E1D1BF000C51E02730C0574CD9400D732514D4CEB1">
+	                   	   	 	<span class="list-title" title="系统维护通知">
+	                   	   	 		系统维护通知
+	                   	   	 		
+	                   	   	 	</span>
+                   	   	 	</a>
+                   	   	 </li>
+                   	   
+                   	   	 <li class="list-items odd">
+                   	   	 	<a href="/sipopublicsearch/portal/showUIContentDetail-showContentDetail.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522262FA5BBC8CD3E57403028E34AB967B99C06E1D8D7A24BEC632866698CC93A1627212F454BA491C6AB524175B9B6E60F5E6DF8E98C278DD9E651E02730C0574CD9400D732514D4CEB1">
+	                   	   	 	<span class="list-title" title="系统通知">
+	                   	   	 		系统通知
+	                   	   	 		
+	                   	   	 	</span>
+                   	   	 	</a>
+                   	   	 </li>
+                   	   
+                   	   	 <li class="list-items ">
+                   	   	 	<a href="/sipopublicsearch/portal/showUIContentDetail-showContentDetail.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522262FA5BBC8CD3E57403028E34AB967B99C23D59D55B657931E37D37A8D168E812AC631780D02DB956F6867F8D09E5C56A694636E3A3372B12051E02730C0574CD9400D732514D4CEB1">
+	                   	   	 	<span class="list-title" title="系统升级通知">
+	                   	   	 		系统升级通知
+	                   	   	 		
+	                   	   	 	</span>
+                   	   	 	</a>
+                   	   	 </li>
+                   	   
+                   	   	 <li class="list-items odd">
+                   	   	 	<a href="/sipopublicsearch/portal/showUIContentDetail-showContentDetail.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522262FA5BBC8CD3E57403028E34AB967B99CDF4A53BE52EEB80C99D572A60C95714103010FF546C46C85730916D19FD212D2CC283C0D6D57FDB851E02730C0574CD9400D732514D4CEB1">
+	                   	   	 	<span class="list-title" title="系统维护通知">
+	                   	   	 		系统维护通知
+	                   	   	 		
+	                   	   	 	</span>
+                   	   	 	</a>
+                   	   	 </li>
+                   	   
+                   </ul>
+               </div>
+           </div>
+           <div class="login">
+               <div class="user">
+                   <!--<div class="user-img">
+                       <img src="http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uihome/images/user-img.png?v=20180527" alt=""/>
+                   </div>-->
+                   
+	               <!--<div class="user-info">
+	                       <h3>HI,您好</h3>
+	                       <p>欢迎访问专利检索及分析</p>
+	                   </div>-->
+	                   <form id="loginIndexForm" action="http://www.pss-system.gov.cn:80/sipopublicsearch/wee/platform/wee_security_check?v=20180527" method="post">
+							<div class="input-area">
+								<label class="in-bl" for="account">
+									用户名
+								</label>
+								<input id="j_username" name="j_username"  type="text" decode="true" class="form_input_a" />
+							</div>
+							<div class="input-area">
+								<label class="in-bl" for="password">
+									密码
+								</label>
+									<input id="j_password_show" type="password" class="form_input_a" style="margin-left:23px;"/>
+		        					<input type="hidden" decode="true" id="j_password" name="j_password"/>
+							</div>
+							<div class="input-area captcha-area">
+								<div style="float:left">
+									<label class="in-bl" for="captcha-input">
+										验证码
+									</label>
+									<input id="j_validation_code" name="j_validation_code" class="captcha-input" />
+								</div>
+								<div class="captcha-img">
+									<img id="codePic" title="请计算图中的结果"  class="captcha-img-size" src='/sipopublicsearch/portal/login-showPic.shtml'  />
+									<a href="javascript:void(0)" style="padding-top:5px;" class="in-bl" onClick="changeCodePic()"> </a>
+								</div>
+								<input id="wee_remember_me" type="checkbox" name="wee_remember_me" >
+								<label for="auto_login">
+									记住密码
+								</label>
+								<label for="auto_login" style="margin-left:80px;">
+									<a href="/sipopublicsearch/portal/uimaintainUser-showSendPasswordPage.shtml">忘记密码</a>
+								</label>
+							</div>
+						</form>
+                   
+                   
+               </div>
+               <div class="login-btn">
+               	   
+	                   <div style="width:220px" class="clear">
+	                       <a class="btn left" href="javascript:void(0)"  onclick="login();return false;">登录</a>
+	                       <a class="btn right" href="/sipopublicsearch/portal/uiregister-showRegisterPage.shtml">注册</a>
+	                   </div>
+                   
+                   
+               </div>
+           </div>
+       </div>
+   </div>
+   <div class="main-bottom clear">
+       <div class="main-left">
+           <div class="title">
+               <h2>热门工具</h2>
+               <span><a menuId="tools_itself" class="main_menuLI" href="javascript:;">更多>></a></span>
+           </div>
+           <div class="hotTool-content">
+               <ul>
+                   <li><a class="cognation main_menuLI" menuId="tools_cognation" href="javascript:;">同族查询</a></li>
+                   <li><a class="quote main_menuLI" menuId="tools_quote" href="javascript:;">引证/被引证查询</a></li>
+                   <li><a class="law main_menuLI" menuId="tools_lawstate" href="javascript:;">法律状态查询</a></li>
+                   <li><a class="alias main_menuLI" menuId="tools_proposer" href="javascript:;">申请(专利权)人别名查询</a></li>
+                   <li><a class="classify main_menuLI" menuId="tools_relevancenum" href="javascript:;">分类号关联查询</a></li>
+                   <li style="border:none;"><a class="diglossia main_menuLI" menuId="tools_doubleword" href="javascript:;">双语词典</a></li>
+               </ul>
+           </div>
+       </div>
+       <div class="main-middle">
+           <div class="speed-search">
+               <div class="title">
+                   <h2>常规检索</h2>
+                   <span>&nbsp;</span>
+               </div>
+               <div class="speed-content">
+                   <div class="speed-input">
+                   	  <div class="icon-area">
+                   	  	<a href="javascript:void(0);" class="in-bl left-icon" id="left_icon">
+								<i></i>
+								<div class="data-extend" id="left_icon_extend">
+								<div class="container">
+									<div class="row row-header">
+										<div class="row-left">
+											<div class="checkbox-area">
+												<label><span id="checkbox_select_all"></span>全选</label>
+											</div>
+										</div>
+										<div class="row-left">
+											<div class="text-area">
+												<strong>数据范围</strong>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="row-left">
+											<div class="checkbox-area r-border">
+												<label><span name="checkbox_select_row"></span>中国</label>
+											</div>
+										</div>
+										<div class="row-left width405" name="checkbox_select_normal">
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="I" name="inventiontype"></span>中国发明申请</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="U" name="inventiontype"></span>中国实用新型</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="D" name="inventiontype"></span>中国外观设计</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="HK" name="countrytypevalue"></span>香港</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="MO" name="countrytypevalue"></span>澳门</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="TW" name="countrytypevalue"></span>台湾</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="row-left">
+											<div class="checkbox-area r-border">
+												<label><span name="checkbox_select_row"></span>主要国家/地区/组织</label>
+											</div>
+										</div>
+										<div class="row-left width405" name="checkbox_select_normal">
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="EP" name="countrytypevalue"></span>EPO</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="WO" name="countrytypevalue"></span>WIPO</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="US" name="countrytypevalue"></span>美国</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="JP" name="countrytypevalue"></span>日本</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="KR" name="countrytypevalue"></span>韩国</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="GB" name="countrytypevalue"></span>英国</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="FR" name="countrytypevalue"></span>法国</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="DE/DD" name="countrytypevalue"></span>德国</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="RU" name="countrytypevalue"></span>俄罗斯</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="CH" name="countrytypevalue"></span>瑞士</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="row-left">
+											<div class="checkbox-area r-border">
+												<label><span name="checkbox_select_row"></span>其他国家/地区/组织</label>
+											</div>
+										</div>
+										<div class="row-left width405" name="checkbox_select_normal">
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="AT" name="countrytypevalue"></span>奥地利</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="AU" name="countrytypevalue"></span>澳大利亚</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="BE" name="countrytypevalue"></span>比利时</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="NL" name="countrytypevalue"></span>荷兰</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="CA" name="countrytypevalue"></span>加拿大</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="ES" name="countrytypevalue"></span>西班牙</label>
+												</div>
+											</div>
+											<div class="row-left">
+												<div class="checkbox-area">
+													<label><span value="MX" name="countrytypevalue"></span>墨西哥</label>
+												</div>
+											</div>
+										</div>
+									</div>		
+								</div>
+							</div>
+							</a>
+							<a href="javascript:void(0);" class="in-bl right-icon" id="right_icon">
+								<i></i> 
+								<div class="extend">
+								<ul class="clear">
+								<li>
+									<input type="radio" name="radioType" id="radioTypeCongregateAI"
+										checked="checked" value="AI">
+									<label for="radioTypeCongregateAI">
+										自动识别
+									</label>
+								</li>
+								<li>
+									<input type="radio" name="radioType" id="radioTypeCongregateBI"
+										value="BI">
+									<label for="radioTypeCongregateBI">
+										检索要素
+									</label>
+								</li>
+								<li>
+									<input type="radio" name="radioType"
+										id="radioTypeCongregateUNI_AN" value="UNI_AN">
+									<label for="radioTypeCongregateUNI_AN">
+										申请号
+									</label>
+								</li>
+								<li>
+									<input type="radio" name="radioType"
+										id="radioTypeCongregateUNI_PN" value="UNI_PN">
+									<label for="radioTypeCongregateUNI_PN">
+										公开（公告）号
+									</label>
+								</li>
+								<li>
+									<input type="radio" name="radioType"
+										id="radioTypeCongregatePAVIEW" value="PAVIEW">
+									<label for="radioTypeCongregatePAVIEW">
+										申请（专利权）人
+									</label>
+								</li>
+								<li>
+									<input type="radio" name="radioType"
+										id="radioTypeCongregateINVIEW" value="INVIEW">
+									<label for="radioTypeCongregateINVIEW">
+										发明人
+									</label>
+								</li>
+								<li>
+									<input type="radio" name="radioType"
+										id="radioTypeCongregateTIVIEW" value="TIVIEW">
+									<label for="radioTypeCongregateTIVIEW">
+										发明名称
+									</label>
+								</li>
+								</ul>
+							</div>
+							</a>
+                   	  </div>	
+                      <input id="quickInput" type="text" placeholder=""/>
+                   </div>
+                   <a id="quickSearch" href="javascript:void(0);" class="btn">检索</a>
+                   <a id="seniorSearch" href="javascript:void(0);" class="senior-search in-bl">高级检索</a>
+               </div>
+           </div>
+           <div class="patent-scope">
+               <div class="title">
+                   <h2>数据收录范围</h2>
+                   <span><a href="/sipopublicsearch/portal/uiInitPortalHome-showDataRange.shtml">更多>></a></span>
+               </div>
+               <div class="scope-content">
+                   <ul class="ul-le"  >
+                       <li class="scope-title even">
+                       		<span class="scope-country" style="padding-left:0;width:83px;">
+                       			国家/地区/组织
+                       		</span>
+                       		<span class="scope-titme" style="padding-left:0;width:106px;">
+                       			收录时间
+                       		</span>
+                       		<span class="scope-number">
+                       			数据量
+                       		</span>
+                       	</li>
+                       
+                       		<li class="">
+                       			<span class="CN scope-country">
+                       				
+                       				CN
+                       			</span>
+	                            <span class="scope-titme">
+	                            	19850910-20180518
+	                            </span>
+	                            <span class="scope-number">
+	                            	45289972
+	                            </span>
+                       		</li>
+                       		
+                       
+                       		<li class="even">
+                       			<span class="US scope-country">
+                       				
+                       				US
+                       			</span>
+	                            <span class="scope-titme">
+	                            	17900731-20180419
+	                            </span>
+	                            <span class="scope-number">
+	                            	16212716
+	                            </span>
+                       		</li>
+                       		
+                       
+                       		<li class="">
+                       			<span class="JP scope-country">
+                       				
+                       				JP
+                       			</span>
+	                            <span class="scope-titme">
+	                            	19130206-20180416
+	                            </span>
+	                            <span class="scope-number">
+	                            	40533505
+	                            </span>
+                       		</li>
+                       		
+                       
+                       		<li class="even">
+                       			<span class="KR scope-country">
+                       				
+                       				KR
+                       			</span>
+	                            <span class="scope-titme">
+	                            	19731023-20180330
+	                            </span>
+	                            <span class="scope-number">
+	                            	4843724
+	                            </span>
+                       		</li>
+                       		
+                       
+                       		<li class="">
+                       			<span class="GB scope-country">
+                       				
+                       				GB
+                       			</span>
+	                            <span class="scope-titme">
+	                            	17820704-20180425
+	                            </span>
+	                            <span class="scope-number">
+	                            	3710930
+	                            </span>
+                       		</li>
+                       		
+                       
+                       		<li class="even">
+                       			<span class="FR scope-country">
+                       				
+                       				FR
+                       			</span>
+	                            <span class="scope-titme">
+	                            	18550227-20180420
+	                            </span>
+	                            <span class="scope-number">
+	                            	3139543
+	                            </span>
+                       		</li>
+                       		
+                       			</ul>
+                       			<ul class="ul-ri" >
+                       			<li class="scope-title even">
+	                       			<span class="scope-country" style="padding-left:0;width:83px;">
+	                       				国家/地区/组织
+	                       			</span>
+	                       			<span class="scope-titme" style="padding-left:0;width:106px;">
+	                       				收录时间
+	                       			</span>
+	                       			<span class="scope-number">
+	                       				数据量
+	                       			</span>
+                       			</li>
+                       		
+                       
+                       		<li class="">
+                       			<span class="DE scope-country">
+                       				
+                       				DE
+                       			</span>
+	                            <span class="scope-titme">
+	                            	18770702-20180426
+	                            </span>
+	                            <span class="scope-number">
+	                            	7604464
+	                            </span>
+                       		</li>
+                       		
+                       
+                       		<li class="even">
+                       			<span class="RU scope-country">
+                       				
+                       				RU
+                       			</span>
+	                            <span class="scope-titme">
+	                            	19921015-20180410
+	                            </span>
+	                            <span class="scope-number">
+	                            	1267817
+	                            </span>
+                       		</li>
+                       		
+                       
+                       		<li class="">
+                       			<span class="CH scope-country">
+                       				
+                       				CH
+                       			</span>
+	                            <span class="scope-titme">
+	                            	18880109-20180413
+	                            </span>
+	                            <span class="scope-number">
+	                            	725738
+	                            </span>
+                       		</li>
+                       		
+                       
+                       		<li class="even">
+                       			<span class="EP scope-country">
+                       				
+                       				EP
+                       			</span>
+	                            <span class="scope-titme">
+	                            	19781220-20180425
+	                            </span>
+	                            <span class="scope-number">
+	                            	6173685
+	                            </span>
+                       		</li>
+                       		
+                       
+                       		<li class="">
+                       			<span class="WO scope-country">
+                       				
+                       				WO
+                       			</span>
+	                            <span class="scope-titme">
+	                            	19781019-20180419
+	                            </span>
+	                            <span class="scope-number">
+	                            	4793767
+	                            </span>
+                       		</li>
+                       		
+                       
+                       		<li class="even">
+                       			<span class="OTHER scope-country">
+                       				其他	
+                       				
+                       			</span>
+	                            <span class="scope-titme">
+	                            	18270314-20180418
+	                            </span>
+	                            <span class="scope-number">
+	                            	16005469
+	                            </span>
+                       		</li>
+                       		
+                       
+                   </ul>
+               </div>
+           </div>
+           <div class="service">
+               <div id="serviceMenu" class="service-menu">
+                   <ul class="clear">
+                       <li class="active"><a href="javascript:changeChinaAndWorldTab('chinamap');">地方服务</a><i></i></li>
+                       <li class="tab-menu">
+                       		<a href="javascript:changeChinaAndWorldTab('worldmap');">其他国家、地区、组织常用信息</a>
+                       	</li>
+                   </ul>
+               </div>
+               <div class="service-content">
+               		<div id="chinamap" class="container-cn-map">
+               			<ul class = "container-cn-map-ul">
+               				<li>
+               					<a href='http://124.128.84.48:8080/pubsearch/patentsearch/searchHomeIndex-searchHomeIndex.shtml' target='_blank'>济南</a>
+               				</li>
+               				<li>
+               					<a href='http://124.128.225.189:8060/pubsearch/patentsearch/searchHomeIndex-searchHomeIndex.shtml' target='_blank'>山东</a>
+               				</li>
+               				<li>
+               					<a href='http://221.226.179.236/pubsearch/patentsearch/searchHomeIndex-searchHomeIndex.shtml' target='_blank'>江苏</a>
+               				</li>
+               				<li>
+               					<a href='http://42.123.101.79/pubsearch/patentsearch/searchHomeIndex-searchHomeIndex.shtml' target='_blank'>贵州</a>
+               				</li>
+               			</ul>
+               			<p>其他地方服务陆续开通，敬请期待!</p>
+				   </div>
+                   <div id="worldmap" class="world-menu" style="display:none;">
+                   		<ul class="world-menu-ul" style="margin-bottom:30px;">
+                   			<li class='world-menu-li-countries'>
+                   				<a href="/sipopublicsearch/portal/uiInitPortalHome-showCountryInfo.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B152226365EC4A63A6DD99DFC6B0A245B7F96B774603FE96F69D8856E3A42B51E7EAD12">
+                   					<p>其他国家、地区、组织基本信息</p>
+                   				</a>
+                   			</li>
+                   			<li class='world-menu-li-wipo'>
+                   				<a href="/sipopublicsearch/portal/uiInitPortalHome-showCountryInfo.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B152226365EC4A63A6DD99DFC6B0A245B7F96B73817984B5FB6DAE6">
+                   					<p>WIPO标准及对应行业标准</p>
+                   				</a>
+                   			</li>
+                   			<li class="world-menu-li-number">
+                   				<a href="/sipopublicsearch/portal/uiInitPortalHome-showCountryInfo.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B152226365EC4A63A6DD99DFC6B0A245B7F96B79F76F8FAB6DF61D22FD5209DFC7F4442">
+                   					<p>号码格式信息</p>
+                   				</a>
+                   			</li>
+                   			<li class="world-menu-li-class">
+                   				<a href="/sipopublicsearch/portal/uiInitPortalHome-showCountryInfo.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B152226365EC4A63A6DD99DFC6B0A245B7F96B741708E4D578C8860ACBE9905A7E28BCB">
+                   					<p>分类号信息</p>
+                   				</a>
+                   			</li>
+                   		</ul>
+                   
+                   	
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="main-right">
+           <div class="service-info">
+               <div class="title">
+                   <h2>系统服务</h2>
+               </div>
+               <div class="service-items">
+				 <div>
+				  	<a href="/sipopublicsearch/portal/showQuestionList-showPubQuestionList.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522260B9A82505B4313C9">
+				  		<div class="service-img-question">	
+				  		</div>
+				  		在线提问
+				  		
+				  	</a>
+				 </div>
+				<div class="mg-le2">
+					<a href="/sipopublicsearch/portal/uishowTrain-fowardTrain.shtml">
+						<div class="service-img-trainingVideo">	
+				  		</div>
+						培训视频
+					</a>
+				</div>
+				<div>
+					<a href="javascript:;" onclick="jumpToUrl('/portal/uishowSItem-initServiceItem.shtml','customize')">
+						<div class="service-img-customize	">	
+				  		</div>
+						定制推送
+					</a>
+				</div>
+				<div class="mg-le2">
+					<a href="/sipopublicsearch/portal/showTransList-queryPubList.shtml">
+						<div class="service-img-innovation">	
+				  		</div>
+						专利交流
+					</a>
+				</div>
+               </div>
+           </div>
+           <div class="newsletter">
+               <div class="title">
+                   <h2>专利统计快报</h2>
+                   <span style="width:134px;">
+	                   	<a href="/sipopublicsearch/portal/showUIContentList-showContentList.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B152226A37198B1101B14693DF73B65CCBCC1A68E2F8FDDFCDEAED77B5C8E56CA5B1533">
+	                   		更多>>
+	                   	</a>
+                   	</span>
+               </div>
+               <div class="list-info-content">
+                   <ul class="list-info">
+                   	   
+                   	   	 <li class="list-items odd">
+                   	   	 	<a href="/sipopublicsearch/portal/showUIContentDetail-showContentDetail.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522262FA5BBC8CD3E57403028E34AB967B99C47C74CD0A014E97217FC640971A60C067B827ECAE84286C60244D671B364C795EAE11CE6D6C6A59951E02730C0574CD98E2F8FDDFCDEAED77B5C8E56CA5B1533">
+	                   	   	 	<span class="list-title" title="2018年5月25日美国公开专利数据统计">
+	                   	   	 		2018年5月25日美国公开专利数据统计
+	                   	   	 	</span>
+                   	   	 	</a>
+                   	   	 </li>
+                   	   
+                   	   	 <li class="list-items ">
+                   	   	 	<a href="/sipopublicsearch/portal/showUIContentDetail-showContentDetail.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522262FA5BBC8CD3E57403028E34AB967B99C538E742B1F3D994D7D97E5C9556D7F674C2D42EDC195DD5020AA3599990EC5DAFE139406943DC61851E02730C0574CD98E2F8FDDFCDEAED77B5C8E56CA5B1533">
+	                   	   	 	<span class="list-title" title="2018年5月25日中国专利公布数据统计">
+	                   	   	 		2018年5月25日中国专利公布数据统计
+	                   	   	 	</span>
+                   	   	 	</a>
+                   	   	 </li>
+                   	   
+                   	   	 <li class="list-items odd">
+                   	   	 	<a href="/sipopublicsearch/portal/showUIContentDetail-showContentDetail.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522262FA5BBC8CD3E57403028E34AB967B99C0EFD1DB09A6FFE59F6342AF34F008F289AA51EBCD08AECCFFA894B5C477E58296E6E546F2C97ECD751E02730C0574CD98E2F8FDDFCDEAED77B5C8E56CA5B1533">
+	                   	   	 	<span class="list-title" title="2018年5月24日日本公开（公告）专利数据统计">
+	                   	   	 		2018年5月24日日本公开（公告）专利数据统计
+	                   	   	 	</span>
+                   	   	 	</a>
+                   	   	 </li>
+                   	   
+                   	   	 <li class="list-items ">
+                   	   	 	<a href="/sipopublicsearch/portal/showUIContentDetail-showContentDetail.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522262FA5BBC8CD3E57403028E34AB967B99CDE207B38804A82DE7F0403F71241A49581F4235C68867E6D999D1BD6F48C95EFDEB5509AF70B8CE051E02730C0574CD98E2F8FDDFCDEAED77B5C8E56CA5B1533">
+	                   	   	 	<span class="list-title" title="2018年5月24日欧洲专利局公开专利数据统计">
+	                   	   	 		2018年5月24日欧洲专利局公开专利数据统计
+	                   	   	 	</span>
+                   	   	 	</a>
+                   	   	 </li>
+                   	   
+                   	   	 <li class="list-items odd">
+                   	   	 	<a href="/sipopublicsearch/portal/showUIContentDetail-showContentDetail.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522262FA5BBC8CD3E57403028E34AB967B99CA2C2388E0031BA10C41DD33A787DE3C80107611CE36A7598AC8642ADE0357E32714079889DC24E6351E02730C0574CD98E2F8FDDFCDEAED77B5C8E56CA5B1533">
+	                   	   	 	<span class="list-title" title="2018年5月17日&mdash;2018年5月23日韩国公开公告专利数据统计">
+	                   	   	 		2018年5月17日&mdash;2018年5月23日韩国公开公告专利数据统计
+	                   	   	 	</span>
+                   	   	 	</a>
+                   	   	 </li>
+                   	   
+                   </ul>
+               </div>
+           </div>
+           <div class="case">
+               <div class="title">
+                   <h2>经典案例分析</h2>
+                   <span style="width:134px;">
+	                   	<a href="/sipopublicsearch/portal/showUIContentList-showContentList.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B152226A37198B1101B14693DF73B65CCBCC1A613D0A260E6A53C45">
+	                   		更多>>
+	                   	</a>
+                   </span>
+               </div>
+               <div class="list-info-content">
+                   <ul class="list-info">
+                   	   
+                   	   	 <li class="list-items odd">
+                   	   	 	<a href="/sipopublicsearch/portal/showUIContentDetail-showContentDetail.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522262FA5BBC8CD3E57403028E34AB967B99C41F858D2CC79208F245883EBE37C4B49C367556C7A657BBD81B06AEAEBCF7CE66DF8E98C278DD9E651E02730C0574CD913D0A260E6A53C45">
+                   	   	 		<span class="list-title" title="&quot;世纪诉讼&quot;专利案收官，三星需向苹果支付 5.39 亿美元赔偿金">
+                   	   	 			&quot;世纪诉讼&quot;专利案收官，三星需向苹果支付 5.39 亿美元赔偿金
+                   	   	 		</span>
+                   	   	 	</a>
+                   	   	 </li>
+                   	   
+                   	   	 <li class="list-items ">
+                   	   	 	<a href="/sipopublicsearch/portal/showUIContentDetail-showContentDetail.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522262FA5BBC8CD3E57403028E34AB967B99C34356FFCA940B751D00F3E870DC2BDC26DE63CC534F6D380A9BC2E71053572C368D92582C4054B8251E02730C0574CD913D0A260E6A53C45">
+                   	   	 		<span class="list-title" title="赚大了！连胜奥克斯三局，若这件专利再胜美的，格力或共获赔9600万">
+                   	   	 			赚大了！连胜奥克斯三局，若这件专利再胜美的，格力或共获赔9600万
+                   	   	 		</span>
+                   	   	 	</a>
+                   	   	 </li>
+                   	   
+                   	   	 <li class="list-items odd">
+                   	   	 	<a href="/sipopublicsearch/portal/showUIContentDetail-showContentDetail.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522262FA5BBC8CD3E57403028E34AB967B99C615102BDCDF782457DD2CF010897FD2C118D5AD0A1EA82D658E0178F75E48D18A5F2A55EE7FE4B1951E02730C0574CD913D0A260E6A53C45">
+                   	   	 		<span class="list-title" title="扫码支付设备竞争升级现厂商专利纠纷">
+                   	   	 			扫码支付设备竞争升级现厂商专利纠纷
+                   	   	 		</span>
+                   	   	 	</a>
+                   	   	 </li>
+                   	   
+                   	   	 <li class="list-items ">
+                   	   	 	<a href="/sipopublicsearch/portal/showUIContentDetail-showContentDetail.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522262FA5BBC8CD3E57403028E34AB967B99CB250C8F9DF5D18E1029621BD551C8AEB1DD713ABE5BA69D566E76969B9AFF4DD714079889DC24E6351E02730C0574CD913D0A260E6A53C45">
+                   	   	 		<span class="list-title" title="专利拉锯战难落幕！苹果再开庭向三星索赔10亿美元">
+                   	   	 			专利拉锯战难落幕！苹果再开庭向三星索赔10亿美元
+                   	   	 		</span>
+                   	   	 	</a>
+                   	   	 </li>
+                   	   
+                   	   	 <li class="list-items odd">
+                   	   	 	<a href="/sipopublicsearch/portal/showUIContentDetail-showContentDetail.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B1522262FA5BBC8CD3E57403028E34AB967B99CF78B14870C01E342AAE06724C35FBB096F463866490E73AD284E323DCFCB8FEF5F475EB3A8B2DEE751E02730C0574CD913D0A260E6A53C45">
+                   	   	 		<span class="list-title" title="贝尔斯顿诉房太榨油机专利侵权案开庭审理">
+                   	   	 			贝尔斯顿诉房太榨油机专利侵权案开庭审理
+                   	   	 		</span>
+                   	   	 	</a>
+                   	   	 </li>
+                   	   
+                   </ul>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+</div>
+<div class="dudian">
+	<a href="http://toupiao.www.gov.cn/100dudian/index.htm" target="_blank"><img style="width:100px;height:100px;" src="http://www.pss-system.gov.cn:80/sipopublicsearch/portal/app/uihome/images/dudian.jpg?v=20180527" alt=""></img></a>
+</div>
+<div id="config_table" style="display:none">
+</div>
+<input type="hidden" name="" value="" id="userName"/>
+<input type="hidden" name="" value="" id="loginErrorType"/>
+<input type="hidden" name="" id="validateCode"/>
+		
+		
+
+
+
+
+<!--尾部-->
+<div class="footer">
+    <div class="wrap">
+        <div class="footer-link">
+            <ul>
+                
+                <li class="interval"></li>
+                <li><a href="/sipopublicsearch/portal/uishowPortalCopyright-showCopyright.shtml">版权声明</a></li>
+                <li class="interval"></li>
+                <li><a href="/sipopublicsearch/portal/uishowLinkList-showLinkList.shtml">友情链接</a></li>
+                <li class="interval"></li>
+                <li><a href="/sipopublicsearch/portal/uishowStatisticPage-initStatisticPage.shtml?params=991CFE73D4DF553253D44E119219BF31366856FF4B15222687956B5EFCB91FAB">流量统计</a></li>
+                <li class="interval"></li>
+                <li><a href="/sipopublicsearch/portal/uisendMail-showContactUsPage.shtml">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="footer-info">
+            <p><span>主办单位：国家知识产权局</span><span style="margin-left:28px;">版权所有：国家知识产权局</span><span style="margin-left:15px;">未经许可不可复制</span></p>
+            <p>ICP备案：京ICP备05069085号    北京市公安局海淀分局备案编号：1101085054</p>
+            <p class="footer-img">
+
+            </p>
+            <p class="icon"><script src="http://dcs.conac.cn/js/33/000/0000/60412369/CA330000000604123690007.js" type="text/javascript"></script></p>
+            <p class="icon_jiucuo"><script id="_jiucuo_" sitecode='bm38000002' src='http://pucha.kaipuyun.cn/exposure/jiucuo.js'></script></p>
+        </div>
+    </div>
+</div>
+
+	</body>
+</html>
