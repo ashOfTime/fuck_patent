@@ -13,7 +13,7 @@ from multiprocessing import Pool
 from multiprocessing.dummy import Pool as ThreadPool
 
 r = redis.Redis('localhost', '6379')
-
+#r.ltrim('proxys',1,0)#删除代理池里的所有ip记录
 def valid(ip):
 	proxies={
 	'http':'http://{}'.format(ip),
@@ -39,17 +39,12 @@ while True:
 	proxys_len = r.llen('proxys')
 	print('可用ip的数量为',proxys_len)
 	while proxys_len < min_proxys:
-		valid_pool = ThreadPool(5)
-		ip_list = requests.get('http://dynamic.goubanjia.com/dynamic/get/45d0e4cd0b14c3c9bcd174948ff5e969.html?sep=3').text.split('\n')
-		print(ip_list)
-		results = valid_pool.map(valid, ip_list[:-1])
-		for result in results:
-			if result[0] == 1:
-				r.lpush('proxys', result[-1])
-				print(result[-1])
+		ip_list = requests.get('http://dynamic.goubanjia.com/dynamic/get/45d0e4cd0b14c3c9bcd174948ff5e969.html?sep=3').text.strip('\n').split('\n')
+		for ip in ip_list:
+			print(ip)
+			r.lpush('proxys', ip)
 		proxys_len = r.llen('proxys')
-		print(proxys_len)
-		time.sleep(3)
+		time.sleep(7)
 
 	time.sleep(2)
 

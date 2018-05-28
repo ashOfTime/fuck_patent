@@ -130,7 +130,9 @@ def login(s,ip):
 			]
 		#print(s.cookies)
 		try:
+
 			rsp = s.post('http://www.pss-system.gov.cn/sipopublicsearch/wee/platform/wee_security_check', headers=headers, data=data, timeout=10, proxies=proxies)
+			#print(rsp.text)
 			if username in rsp.text:
 				is_login = 1
 			else:

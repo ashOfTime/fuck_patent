@@ -100,10 +100,19 @@ def spider(datetime_info):
 	try:
 		response = requests.post('http://www.pss-system.gov.cn/sipopublicsearch/patentsearch/showSearchResult-startWa.shtml', headers=headers, cookies=cookies, data=data, proxies=proxies, timeout=20)
 
-		if response.text.find('<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">') != -1:
+		if response.content.decode('utf-8').find('<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">') != -1:
 			status = 2
 			content = 'F'
-			print(id,'--')
+			print(id,'cc')
+		elif response.content.decode('utf-8').find('您的访问出错了') != -1:
+			status = 3
+			content = 'F'
+			print(id,'ii')
+
+		elif response.content.decode('utf-8').find('您的操作太过频繁') != -1:
+			status = 3
+			content = 'F'
+			print(id,' ban')
 		else:
 			status = 1
 			content = response.content
@@ -133,17 +142,30 @@ def write_db(id, content):
 	cursor.close()
 	db.close()
 
+def get_ip_from_proxiesPool():
+	Redis = redis.Redis('localhost', '6379')
+	while True:
+	#从代理池里取出代理，如果报错就说明此时代理池为空，需要等待一会
+		try:
+			ip = Redis.rpop('proxys').decode('utf-8')
+			break
+		except:
+			time.sleep(2)
+	print(ip)
+	return ip
+
 def muti_control_2(sub_duty):
-	r = redis.Redis('localhost', '6379')
 	pool = ThreadPool(5)
 
 	#模拟登陆
 	s = requests.Session()
 	is_login = 0
 	while not is_login:
-		#ip = r.rpop('proxys').decode('utf-8')
-		ip = requests.get('http://dynamic.goubanjia.com/dynamic/get/9e35ec79eed543fd891b05663d9780b6.html?sep=3&random=true').text.strip()
+		#ip = get_ip_from_proxiesPool()
+		ip_list = requests.get('http://dynamic.goubanjia.com/dynamic/get/45d0e4cd0b14c3c9bcd174948ff5e969.html?sep=3').text.strip('\n').split('\n')
+		ip = ip_list[0]
 		is_login = login(s,ip)
+		print(is_login)
 		#time.sleep(10)
 
 	print('suss login')
@@ -153,10 +175,12 @@ def muti_control_2(sub_duty):
                 }
 	requests.post(url='http://www.pss-system.gov.cn/sipopublicsearch/patentsearch/pageIsUesd-pageUsed.shtml',
                                  proxies=proxies, cookies=s.cookies)
+	print('tou ming zhuang ')
+
 	while True:
 		
 		#datetime_info = get_data_from_datetime(threads, sub_duty[0], sub_duty[-1])
-		datetime_info = get_data_from_datetime(10, 17000,20000)
+		datetime_info = get_data_from_datetime(10, 26000,28000)
 		task = [list(t) for t in datetime_info]
 		for i in task:
 			i.append(s.cookies)
@@ -184,38 +208,54 @@ def muti_control_2(sub_duty):
 				print(r[0],'ip wrong')
 				needIp = 1
 
+
 		#根据结果 更新session的状态
 		if needCookies:
 			is_login = 0
 			while not is_login:
-				#ip = r.rpop('proxys')
-				ip = requests.get('http://dynamic.goubanjia.com/dynamic/get/9e35ec79eed543fd891b05663d9780b6.html?sep=3&random=true').text.strip()
+				print('login again...')
+				#ip = get_ip_from_proxiesPool()
+				ip_list = requests.get('http://dynamic.goubanjia.com/dynamic/get/45d0e4cd0b14c3c9bcd174948ff5e969.html?sep=3').text.strip('\n').split('\n')
+				ip = ip_list[0]
 				is_login = login(s,ip)
+				requests.post(url='http://www.pss-system.gov.cn/sipopublicsearch/patentsearch/pageIsUesd-pageUsed.shtml',proxies=proxies, cookies=s.cookies)
+				print('tou ming zhuang ')
+
+
 		elif needIp:
 				while True:
-					#ip = r.rpop('proxys')
-					ip = requests.get('http://dynamic.goubanjia.com/dynamic/get/9e35ec79eed543fd891b05663d9780b6.html?sep=3&random=true').text.strip()
+					#ip = get_ip_from_proxiesPool()
+					ip_list = requests.get('http://dynamic.goubanjia.com/dynamic/get/45d0e4cd0b14c3c9bcd174948ff5e969.html?sep=3').text.strip('\n').split('\n')
+					ip = ip_list[0]
 					print('renew ip ...')
 					proxies={
 				    'http':'http://{}'.format(ip),
 				    'https':'https://{}'.format(ip)
 	                }
+
 					try:
 						rsp_ipTest = requests.get('http://www.pss-system.gov.cn/sipopublicsearch/portal/uiIndex.shtml',proxies=proxies,timeout=10)
 						if rsp_ipTest.status_code == 200 and '访问受限' not in rsp_ipTest.text:
-							break
+							try:
+								requests.post(url='http://www.pss-system.gov.cn/sipopublicsearch/patentsearch/pageIsUesd-pageUsed.shtml',proxies=proxies, cookies=s.cookies, timeout=7)
+								print('tou ming zhuang ')
+								break
+
+							except:
+								pass
+
+							
 					except:
 						pass
 
-def main():
-	pass
 
 
+
+
+muti_control_2(111)
 #r = get_data_from_datetime(8, 10000,11000)
 #print(r)
-muti_control_2(11)
-# if __name__ == '__mann__':
-# 	main()
+
 
 
 
