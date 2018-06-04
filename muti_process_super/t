@@ -1,12 +1,1 @@
-from multiprocessing import Pool,Queue
-from t2 import task
-p = Pool(4)
-
-
-
-r = []
-for i,name in zip(range(5), range(2,7)):
-	p.apply_async(task, args=(i,name))
-
-p.close()
-p.join()
+from proxy import ProxyPool

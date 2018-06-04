@@ -20,8 +20,8 @@ def ML_reco_valcode():
 	"""
 	用训练好的模型去解析验证码
 	"""
-	knn = joblib.load('./sipo3.job')
-	image = np.asarray(Image.open('./valcode.jpg').convert('L'))
+	knn = joblib.load('/home/xwk/Desktop/fuck_patent/muti_process_super/sipo3.job')
+	image = np.asarray(Image.open('/home/xwk/Desktop/fuck_patent/muti_process_super/valcode.jpg').convert('L'))
 	image = (image > 135) * 255
 	letters = [image[:, 6:18].reshape(20*12), image[:, 19:31].reshape(20*12), image[:, 33:45].reshape(20*12), image[:, 45:57].reshape(20*12)]
 
